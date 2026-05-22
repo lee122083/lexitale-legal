@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LexiTale 隱私權政策</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f8fafc;
+      --panel: #ffffff;
+      --text: #172033;
+      --muted: #5b6475;
+      --border: #d8dee8;
+      --accent: #1f6feb;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.7;
+    }
+
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 20px 72px;
+    }
+
+    article {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 2rem;
+      line-height: 1.25;
+    }
+
+    h2 {
+      margin-top: 32px;
+      font-size: 1.25rem;
+    }
+
+    p,
+    li {
+      font-size: 1rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      margin-top: 0;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    @media (max-width: 640px) {
+      main {
+        padding: 24px 12px 48px;
+      }
+
+      article {
+        padding: 22px;
+      }
+
+      h1 {
+        font-size: 1.65rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <article>
+      <h1>LexiTale 隱私權政策</h1>
+      <p class="meta">生效日期：2026 年 5 月 21 日</p>
+
+      <p>LexiTale（以下稱「我們」）致力於保護您的隱私。本隱私權政策說明 LexiTale Android App 如何收集、使用、同步及保護您的資訊。</p>
+
+      <h2>1. 資料收集</h2>
+      <ul>
+        <li><strong>本機學習資料：</strong>我們會在您的裝置上儲存學習進度，例如已學單字、收藏、隱藏狀態、複習日期、FSRS 複習參數及自訂單字。這些資料預設儲存在 App 的本機資料庫。</li>
+        <li><strong>登入資料：</strong>若您選擇使用 Google 登入，App 會透過 Firebase Authentication 處理登入，並取得 Firebase 使用者 ID 及 Google 帳號提供的基本登入識別資訊，例如電子郵件或顯示名稱。若您選擇「暫不登入，先體驗看看」，可以不登入先使用本機學習流程。</li>
+        <li><strong>雲端同步資料：</strong>若您登入並使用同步功能，學習紀錄可能會同步至 Cloud Firestore，用於跨裝置還原或同步進度。同步資料包含單字 ID、字根或詞條、單字包、收藏或隱藏狀態、FSRS 狀態、上次複習日期與下次複習日期。</li>
+        <li><strong>錯誤回報資料：</strong>若您回報字卡問題，App 可能會送出單字 ID、詞條、回報原因、當時的字卡內容快照、回報時間，以及登入使用者的 Firebase UID；未登入時會以匿名標記記錄。</li>
+        <li><strong>外部字典查詢：</strong>若您使用新增或查詢單字功能，App 可能會將您輸入的英文單字傳送至第三方免費字典 API，以取得發音、詞性、定義或例句。</li>
+      </ul>
+
+      <h2>2. 資料使用</h2>
+      <ul>
+        <li>您的學習資料用於提供閃卡複習、學習進度統計、收藏、隱藏、自訂單字、FSRS 複習排程及雲端還原功能。</li>
+        <li>錯誤回報資料用於檢查與修正字卡內容品質。</li>
+        <li>我們不出售您的個人資料，也不使用您的資料進行廣告追蹤。</li>
+        <li>MVP 版本不內建第三方廣告、精準定位、相機、麥克風或聯絡人存取功能。若未來版本加入廣告、付款或分析功能，我們會在正式上線前更新本政策與 Google Play 資料揭露。</li>
+      </ul>
+
+      <h2>3. 資料保護</h2>
+      <ul>
+        <li>本機資料儲存在您的手機應用程式專屬目錄。</li>
+        <li>雲端登入、同步與錯誤回報資料由 Firebase Authentication 與 Cloud Firestore 處理。</li>
+        <li>字卡圖片與音訊可能透過 Firebase Storage/CDN 載入；這些公開學習資產不包含您的個人學習紀錄。</li>
+        <li>我們會以最小必要原則設計資料流；未登入使用本機流程時，學習進度不會主動同步至雲端。</li>
+      </ul>
+
+      <h2>4. 權限說明</h2>
+      <ul>
+        <li><strong>網路存取：</strong>用於同步學習進度，以及下載字卡圖片與音訊等學習資產。</li>
+        <li><strong>震動控制：</strong>用於提供觸感回饋以提升學習體驗。</li>
+      </ul>
+
+      <h2>5. 資料刪除</h2>
+      <p>若您希望刪除雲端學習資料，請透過下方聯絡方式提出請求。我們會在合理時間內協助刪除與您的 Firebase 使用者 ID 相關的雲端學習紀錄與回報資料。本機資料可透過 App 移除、清除 App 資料或解除安裝 App 移除。</p>
+
+      <h2>6. 付費與購買資料</h2>
+      <p>MVP 版本的會員頁面目前僅為功能入口或預告，不在 App 內直接處理信用卡、付款卡號或銀行資料。若未來啟用 Google Play Billing 或其他付費功能，本政策會在正式上線前更新。</p>
+
+      <h2>7. 聯絡我們</h2>
+      <p>若對本政策有任何疑問，請透過 Google Play 商店頁面顯示的開發者聯絡資訊，或 LexiTale 專案頁面與開發團隊聯絡。</p>
+    </article>
+  </main>
+</body>
+</html>
