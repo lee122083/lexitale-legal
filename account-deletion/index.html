@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LexiTale 帳號刪除申請</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f8fafc;
+      --panel: #ffffff;
+      --text: #172033;
+      --muted: #5b6475;
+      --border: #d8dee8;
+      --accent: #1f6feb;
+      --danger: #b42318;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.7;
+    }
+
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 20px 72px;
+    }
+
+    article {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 2rem;
+      line-height: 1.25;
+    }
+
+    h2 {
+      margin-top: 32px;
+      font-size: 1.25rem;
+    }
+
+    p,
+    li {
+      font-size: 1rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      margin-top: 0;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    @media (max-width: 640px) {
+      main {
+        padding: 24px 12px 48px;
+      }
+
+      article {
+        padding: 22px;
+      }
+
+      h1 {
+        font-size: 1.65rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <article>
+      <h1>LexiTale 帳號刪除申請</h1>
+      <p class="meta">最後更新日期：2026 年 5 月 26 日</p>
+
+      <p>您可以在 LexiTale App 的設定頁直接選擇「刪除帳號」。若您已無法使用 App，也可以透過本頁提出刪除申請。</p>
+
+      <h2>App 內刪除方式</h2>
+      <ol>
+        <li>開啟 LexiTale，完成 Google 登入。</li>
+        <li>進入設定頁，選擇「刪除帳號」。</li>
+        <li>閱讀確認訊息並重新完成 Google 驗證。</li>
+        <li>完成後，LexiTale 會刪除您的帳號與綁定的雲端學習進度。</li>
+      </ol>
+
+      <h2>無法使用 App 時</h2>
+      <p>請以您曾用於 LexiTale Google 登入的電子郵件帳號寄送刪除申請至：</p>
+      <p><strong><a href="mailto:lexitale.support@gmail.com?subject=LexiTale%20%E5%B8%B3%E8%99%9F%E5%88%AA%E9%99%A4%E7%94%B3%E8%AB%8B">lexitale.support@gmail.com</a></strong></p>
+      <p>信件主旨請填寫「LexiTale 帳號刪除申請」。為保護您的帳號，我們可能要求您完成必要的帳號驗證；請勿在初次來信中提供密碼、驗證碼或其他敏感資訊。</p>
+
+      <h2>刪除範圍</h2>
+      <ul>
+        <li>Firebase Authentication 中的 LexiTale 登入帳號。</li>
+        <li>與該帳號綁定的 Cloud Firestore 學習進度資料。</li>
+        <li>MVP 版本的新字卡問題回報不保存您的 Firebase UID，因此不建立可依帳號識別的回報資料。</li>
+      </ul>
+
+      <h2>裝置上的資料</h2>
+      <p>儲存在手機本機的學習資料不會透過網頁申請遠端移除。您可透過清除 App 資料或解除安裝 LexiTale 移除裝置上的資料。</p>
+
+      <h2>隱私權政策</h2>
+      <p>更多資料處理資訊請閱讀 <a href="../privacy-policy/">LexiTale 隱私權政策</a>。</p>
+    </article>
+  </main>
+</body>
+</html>
