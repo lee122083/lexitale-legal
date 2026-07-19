@@ -3,114 +3,466 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LexiTale 帳號刪除申請</title>
+  <title id="page-title">LexiTale 帳號刪除申請 | Account Deletion</title>
   <style>
     :root {
       color-scheme: light;
-      --bg: #f8fafc;
-      --panel: #ffffff;
-      --text: #172033;
-      --muted: #5b6475;
-      --border: #d8dee8;
-      --accent: #1f6feb;
-      --danger: #b42318;
+      --bg: hsl(210, 40%, 98%);
+      --panel: hsl(0, 0%, 100%);
+      --text: hsl(220, 40%, 15%);
+      --muted: hsl(220, 15%, 45%);
+      --border: hsl(214, 32%, 91%);
+      --accent: hsl(215, 90%, 55%);
+      --accent-hover: hsl(215, 90%, 45%);
+      --accent-light: hsl(215, 90%, 96%);
+      --danger: hsl(354, 85%, 44%);
     }
 
     body {
       margin: 0;
       background: var(--bg);
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", "Noto Sans SC", "Noto Sans JP", "Noto Sans KR", sans-serif;
       line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
     }
 
     main {
       max-width: 860px;
       margin: 0 auto;
-      padding: 48px 20px 72px;
+      padding: 40px 20px 72px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 10px rgba(31, 111, 235, 0.25);
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }
+
+    /* Language Switcher */
+    .lang-switcher {
+      display: flex;
+      background: hsl(210, 20%, 93%);
+      border-radius: 20px;
+      padding: 4px;
+      gap: 2px;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .lang-btn:hover {
+      color: var(--text);
+    }
+
+    .lang-btn.active {
+      background: var(--panel);
+      color: var(--accent);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     }
 
     article {
       background: var(--panel);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 32px;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+      transition: transform 0.3s ease;
     }
 
     h1 {
       margin: 0 0 8px;
-      font-size: 2rem;
+      font-size: 2.1rem;
+      font-weight: 900;
       line-height: 1.25;
+      letter-spacing: -0.5px;
     }
 
     h2 {
-      margin-top: 32px;
-      font-size: 1.25rem;
+      margin-top: 36px;
+      font-size: 1.35rem;
+      font-weight: 800;
+      border-bottom: 2px solid var(--bg);
+      padding-bottom: 8px;
+      color: var(--text);
     }
 
-    p,
+    p, li {
+      font-size: 1.05rem;
+      color: hsl(220, 25%, 25%);
+    }
+
     li {
-      font-size: 1rem;
+      margin-bottom: 8px;
     }
 
     .meta {
       color: var(--muted);
       margin-top: 0;
+      font-size: 0.9rem;
+      font-weight: 500;
     }
 
-    a {
+    /* Email display box */
+    .email-box {
+      background: var(--accent-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 20px 0;
+      display: inline-block;
+      transition: all 0.2s ease;
+    }
+
+    .email-box:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(31, 111, 235, 0.08);
+    }
+
+    .email-box a {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1.15rem;
+      font-family: monospace, sans-serif;
+    }
+
+    .email-box a:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+
+    /* Steps and list adjustments */
+    ol, ul {
+      padding-left: 20px;
+    }
+
+    ol li::marker {
+      font-weight: bold;
       color: var(--accent);
     }
 
     @media (max-width: 640px) {
       main {
-        padding: 24px 12px 48px;
+        padding: 20px 12px 48px;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .lang-switcher {
+        width: 100%;
+        justify-content: space-between;
+        overflow-x: auto;
+      }
+
+      .lang-btn {
+        flex: 1;
+        padding: 6px 8px;
+        font-size: 0.8rem;
       }
 
       article {
-        padding: 22px;
+        padding: 24px 20px;
       }
 
       h1 {
-        font-size: 1.65rem;
+        font-size: 1.7rem;
       }
     }
   </style>
 </head>
 <body>
   <main>
+    <header>
+      <div class="logo-container">
+        <div class="logo-icon">L</div>
+        <div class="logo-text">LexiTale</div>
+      </div>
+      <div class="lang-switcher" id="lang-switcher" role="navigation" aria-label="Language Selector">
+        <button class="lang-btn active" onclick="switchLanguage('zh')" id="btn-zh">繁中</button>
+        <button class="lang-btn" onclick="switchLanguage('zh-cn')" id="btn-zh-cn">简中</button>
+        <button class="lang-btn" onclick="switchLanguage('en')" id="btn-en">EN</button>
+        <button class="lang-btn" onclick="switchLanguage('ja')" id="btn-ja">日本語</button>
+        <button class="lang-btn" onclick="switchLanguage('ko')" id="btn-ko">한국어</button>
+      </div>
+    </header>
+
     <article>
-      <h1>LexiTale 帳號刪除申請</h1>
-      <p class="meta">最後更新日期：2026 年 5 月 26 日</p>
+      <!-- Traditional Chinese (ZH) -->
+      <div class="lang-section" id="sec-zh">
+        <h1 id="title-zh">LexiTale 帳號刪除申請</h1>
+        <p class="meta">最後更新日期：2026 年 7 月 13 日</p>
+        <p>您可以在 LexiTale App 的設定頁直接選擇「刪除帳號」。若您已無法使用 App，也可以透過本頁提出刪除申請。</p>
 
-      <p>您可以在 LexiTale App 的設定頁直接選擇「刪除帳號」。若您已無法使用 App，也可以透過本頁提出刪除申請。</p>
+        <h2>App 內刪除方式</h2>
+        <ol>
+          <li>開啟 LexiTale，完成 Google 登入。</li>
+          <li>進入設定頁，選擇「刪除帳號」。</li>
+          <li>閱讀確認訊息，並輸入目前 Google 帳號電子郵件以確認刪除；請勿提供密碼、驗證碼或付款資料。</li>
+          <li>LexiTale 會刪除綁定的 Cloud Firestore 雲端學習進度與統計資料、舊版回報截圖附件、本機快取的高品質圖片與 SQLite 進度，並嘗試刪除 Firebase Authentication 登入帳號。若 Firebase 要求近期登入或 App 無法完成登入帳號刪除，您仍可使用本頁提出申請。</li>
+        </ol>
 
-      <h2>App 內刪除方式</h2>
-      <ol>
-        <li>開啟 LexiTale，完成 Google 登入。</li>
-        <li>進入設定頁，選擇「刪除帳號」。</li>
-        <li>閱讀確認訊息並重新完成 Google 驗證。</li>
-        <li>完成後，LexiTale 會刪除您的帳號與綁定的雲端學習進度。</li>
-      </ol>
+        <h2>無法使用 App 時</h2>
+        <p>請以您曾用於 LexiTale Google 登入的電子郵件帳號寄送刪除申請至：</p>
+        <div class="email-box">
+          <a href="mailto:lexitale.support@gmail.com?subject=LexiTale%20%E5%B8%B3%E8%99%9F%E5%88%AA%E9%99%A4%E7%94%B3%E8%AB%8B" id="email-zh">lexitale.support@gmail.com</a>
+        </div>
+        <p>信件主旨請填寫「LexiTale 帳號刪除申請」。為保護您的帳號安全，我們可能要求您配合完成必要的身份驗證；請勿在初次來信中提供密碼、驗證碼或其他敏感個資。</p>
 
-      <h2>無法使用 App 時</h2>
-      <p>請以您曾用於 LexiTale Google 登入的電子郵件帳號寄送刪除申請至：</p>
-      <p><strong><a href="mailto:lexitale.support@gmail.com?subject=LexiTale%20%E5%B8%B3%E8%99%9F%E5%88%AA%E9%99%A4%E7%94%B3%E8%AB%8B">lexitale.support@gmail.com</a></strong></p>
-      <p>信件主旨請填寫「LexiTale 帳號刪除申請」。為保護您的帳號，我們可能要求您完成必要的帳號驗證；請勿在初次來信中提供密碼、驗證碼或其他敏感資訊。</p>
+        <h2>刪除資料範圍</h2>
+        <ul>
+          <li>Firebase Authentication 中的 LexiTale 登入帳號。</li>
+          <li>與該帳號綁定的 Cloud Firestore 學習進度與統計資料。</li>
+          <li>儲存在手機本機的學習進度（SQLite）與下載的高品質情境圖片檔快取。</li>
+          <li>舊版回報截圖附件會在 App 內刪帳時一併刪除。</li>
+          <li><em>註：新版去識別化意見不保存 Firebase UID、姓名、信箱或截圖，無法連回特定帳號，可能保留作為產品與內容修正證據。</em></li>
+        </ul>
 
-      <h2>刪除範圍</h2>
-      <ul>
-        <li>Firebase Authentication 中的 LexiTale 登入帳號。</li>
-        <li>與該帳號綁定的 Cloud Firestore 學習進度資料。</li>
-        <li>MVP 版本的新字卡問題回報不保存您的 Firebase UID，因此不建立可依帳號識別的回報資料。</li>
-      </ul>
+        <h2>裝置上的資料</h2>
+        <p>除了雲端刪除，您也可以透過直接「清除 App 快取資料」或「解除安裝 LexiTale」來立即物理移除裝置上的所有本機資料。</p>
 
-      <h2>裝置上的資料</h2>
-      <p>儲存在手機本機的學習資料不會透過網頁申請遠端移除。您可透過清除 App 資料或解除安裝 LexiTale 移除裝置上的資料。</p>
+        <h2>隱私權政策</h2>
+        <p>更多隱私與資料處理資訊請閱讀 <a href="../privacy-policy/" id="privacy-link-zh">LexiTale 隱私權政策</a>。</p>
+      </div>
 
-      <h2>隱私權政策</h2>
-      <p>更多資料處理資訊請閱讀 <a href="../privacy-policy/">LexiTale 隱私權政策</a>。</p>
+      <!-- Simplified Chinese (ZH-CN) -->
+      <div class="lang-section" id="sec-zh-cn" style="display: none;">
+        <h1 id="title-zh-cn">LexiTale 账号删除申请</h1>
+        <p class="meta">最后更新日期：2026 年 7 月 13 日</p>
+        <p>您可以在 LexiTale App 的设置页直接选择「删除账号」。若您已无法使用 App，也可以通过本页提出删除申请。</p>
+
+        <h2>App 内删除方式</h2>
+        <ol>
+          <li>开启 LexiTale，完成 Google 登录。</li>
+          <li>进入设置页，选择「删除账号」。</li>
+          <li>阅读确认信息，并输入目前 Google 账号电子邮件以确认删除；请勿提供密码、验证码或付款资料。</li>
+          <li>LexiTale 会删除绑定的 Cloud Firestore 云端学习进度与统计数据、旧版反馈截图附件、本机缓存的高品质图片与 SQLite 进度，并尝试删除 Firebase Authentication 登录账号。若 Firebase 要求近期登录或 App 无法完成登录账号删除，您仍可使用本页提出申请。</li>
+        </ol>
+
+        <h2>无法使用 App 时</h2>
+        <p>请以您曾用于 LexiTale Google 登录的电子邮件账号发送删除申请至：</p>
+        <div class="email-box">
+          <a href="mailto:lexitale.support@gmail.com?subject=LexiTale%20%E8%B4%A6%E5%8F%B7%E5%88%A0%E9%99%A4%E7%94%B3%E8%AF%B7" id="email-zh-cn">lexitale.support@gmail.com</a>
+        </div>
+        <p>信件主旨请填写「LexiTale 账号删除申请」。为保护您的账号安全，我们可能要求您配合完成必要的身份验证；请勿在初次来信中提供密码、验证码或其他敏感个资。</p>
+
+        <h2>删除数据范围</h2>
+        <ul>
+          <li>Firebase Authentication 中的 LexiTale 登录账号。</li>
+          <li>与该账号绑定的 Cloud Firestore 学习进度与统计数据。</li>
+          <li>储存在手机本机的学习进度（SQLite）与下载的高品质情境图片档缓存。</li>
+          <li>旧版反馈截图附件会在 App 内删除账号时一并删除。</li>
+          <li><em>注：新版去标识化意见不保存 Firebase UID、姓名、邮箱或截图，无法关联特定账号，可能保留作为产品与内容修正证据。</em></li>
+        </ul>
+
+        <h2>设备上的数据</h2>
+        <p>除了云端删除，您也可以通过直接「清除 App 缓存数据」或「卸载 LexiTale」来立即物理移除设备上的所有本机数据。</p>
+
+        <h2>隐私权政策</h2>
+        <p>更多隐私与数据处理资讯请阅读 <a href="../privacy-policy/" id="privacy-link-zh-cn">LexiTale 隐私权政策</a>。</p>
+      </div>
+
+      <!-- English (EN) -->
+      <div class="lang-section" id="sec-en" style="display: none;">
+        <h1 id="title-en">LexiTale Account Deletion</h1>
+        <p class="meta">Last Updated: July 13, 2026</p>
+        <p>You can choose "Delete Account" directly on the settings page of the LexiTale App. If you can no longer use the App, you can request deletion through this page.</p>
+
+        <h2>How to Delete in the App</h2>
+        <ol>
+          <li>Open LexiTale and sign in with your Google account.</li>
+          <li>Go to Settings and select "Delete Account".</li>
+          <li>Read the confirmation message and enter the current Google account email to confirm deletion. Do not provide passwords, verification codes, or payment information.</li>
+          <li>LexiTale deletes the associated Cloud Firestore learning progress and statistics, legacy report screenshot attachments, locally cached high-quality images, and SQLite progress, and attempts to delete the Firebase Authentication login account. If Firebase requires recent sign-in or the App cannot complete login-account deletion, you can still submit a request through this page.</li>
+        </ol>
+
+        <h2>Without the App</h2>
+        <p>Please send a deletion request using the email account linked to your LexiTale Google login to:</p>
+        <div class="email-box">
+          <a href="mailto:lexitale.support@gmail.com?subject=LexiTale%20Account%20Deletion%20Request" id="email-en">lexitale.support@gmail.com</a>
+        </div>
+        <p>Please specify "LexiTale Account Deletion Request" as the email subject. To protect your account security, we may request additional identity verification. Please do NOT include your password, verification codes, or other sensitive details in your initial email.</p>
+
+        <h2>Scope of Deleted Data</h2>
+        <ul>
+          <li>Your LexiTale login account in Firebase Authentication.</li>
+          <li>Associated learning progress and statistics in Cloud Firestore.</li>
+          <li>Local learning progress (SQLite) and downloaded high-quality scenario WebP images cached on your mobile device.</li>
+          <li>Legacy report screenshot attachments are deleted during in-app account deletion.</li>
+          <li><em>Note: New deidentified feedback does not store a Firebase UID, name, email, or screenshot. It cannot be linked to a specific account and may be retained as evidence for product and content fixes.</em></li>
+        </ul>
+
+        <h2>Data on Your Device</h2>
+        <p>In addition to cloud deletion, you can wipe all local progress and assets immediately by "clearing App data" or "uninstalling LexiTale" from your device settings.</p>
+
+        <h2>Privacy Policy</h2>
+        <p>For more information on privacy and data processing, please read the <a href="../privacy-policy/" id="privacy-link-en">LexiTale Privacy Policy</a>.</p>
+      </div>
+
+      <!-- Japanese (JA) -->
+      <div class="lang-section" id="sec-ja" style="display: none;">
+        <h1 id="title-ja">LexiTale アカウント削除申請</h1>
+        <p class="meta">最終更新日：2026年7月13日</p>
+        <p>アカウントの削除は、LexiTale アプリ内の設定ページから直接行えます。アプリをご利用いただけない場合は、このページから削除を申請することも可能です。</p>
+
+        <h2>アプリ内での削除手順</h2>
+        <ol>
+          <li>LexiTale を起動し、Google アカウントでサインインします。</li>
+          <li>設定ページを開き、「アカウント削除」を選択します。</li>
+          <li>確認メッセージを確認し、現在の Google アカウントのメールアドレスを入力して削除を確認します。パスワード、認証コード、支払い情報は入力しないでください。</li>
+          <li>LexiTale は関連する Cloud Firestore の学習進度と統計、旧版の報告スクリーンショット添付、ローカルにキャッシュされた高品質画像と SQLite データを削除し、Firebase Authentication ログインアカウントの削除を試みます。Firebase が最近のログインを要求する場合、またはアプリ内でログインアカウント削除を完了できない場合でも、本ページから申請できます。</li>
+        </ol>
+
+        <h2>アプリを利用できない場合</h2>
+        <p>LexiTale の Google ログインに使用していたメールアドレスから、以下のアドレス宛てに削除申請を送信してください：</p>
+        <div class="email-box">
+          <a href="mailto:lexitale.support@gmail.com?subject=LexiTale%20Account%20Deletion%20Request%20(JP)" id="email-ja">lexitale.support@gmail.com</a>
+        </div>
+        <p>メールの件名に「LexiTale アカウント削除申請」とご記入ください。アカウント保護のため、本人確認を求められる場合があります。最初のメールにパスワードや認証コードなどの機密情報を含めないでください。</p>
+
+        <h2>削除されるデータの範囲</h2>
+        <ul>
+          <li>Firebase Authentication 内の LexiTale ログインアカウント。</li>
+          <li>アカウントに関連付けられた Cloud Firestore の学習進度および統計データ。</li>
+          <li>スマートフォン端末に保存された学習履歴（SQLite）およびダウンロードされた高品質シーン WebP 画像キャッシュ。</li>
+          <li>旧版の報告スクリーンショット添付は、アプリ内でのアカウント削除時に削除されます。</li>
+          <li><em>注：新版の匿名化フィードバックは Firebase UID、氏名、メール、スクリーンショットを保存しません。特定のアカウントには関連付けられず、製品・コンテンツ修正の証拠として保持される場合があります。</em></li>
+        </ul>
+
+        <h2>端末内のデータ</h2>
+        <p>クラウド上の削除に加えて、端末の設定から「アプリのキャッシュデータを消去」または「LexiTale をアンインストール」することで、端末内のすべてのローカルデータを即座に物理的削除できます。</p>
+
+        <h2>プライバシーポリシー</h2>
+        <p>データの取り扱いに関する詳細は、<a href="../privacy-policy/" id="privacy-link-ja">LexiTale プライバシーポリシー</a>をご確認ください。</p>
+      </div>
+
+      <!-- Korean (KO) -->
+      <div class="lang-section" id="sec-ko" style="display: none;">
+        <h1 id="title-ko">LexiTale 계정 회원탈퇴 신청</h1>
+        <p class="meta">최종 업데이트: 2026년 7월 13일</p>
+        <p>LexiTale 앱의 설정 페이지에서 직접 "회원탈퇴"를 진행할 수 있습니다. 앱을 사용하실 수 없는 경우, 이 페이지를 통해 회원탈퇴 신청을 하실 수 있습니다.</p>
+
+        <h2>앱 내 회원탈퇴 방법</h2>
+        <ol>
+          <li>LexiTale을 켜고 Google로 로그인합니다.</li>
+          <li>설정 페이지로 이동하여 "회원탈퇴"를 누릅니다.</li>
+          <li>안내 메시지를 읽고 현재 Google 계정 이메일을 입력해 삭제를 확인합니다. 비밀번호, 인증 코드 또는 결제 정보를 입력하지 마세요.</li>
+          <li>LexiTale은 연결된 Cloud Firestore 학습 기록과 통계, 이전 버전 신고 스크린샷 첨부, 기기에 저장된 고화질 이미지 캐시 및 SQLite 학습 진도를 삭제하고 Firebase Authentication 로그인 계정 삭제를 시도합니다. Firebase가 최근 로그인을 요구하거나 앱에서 로그인 계정 삭제를 완료할 수 없는 경우에도 이 페이지를 통해 요청할 수 있습니다.</li>
+        </ol>
+
+        <h2>앱을 사용할 수 없는 경우</h2>
+        <p>LexiTale Google 로그인에 사용하셨던 이메일 주소로 아래 주소에 회원탈퇴 신청 메일을 보내주세요:</p>
+        <div class="email-box">
+          <a href="mailto:lexitale.support@gmail.com?subject=LexiTale%20Account%20Deletion%20Request%20(KR)" id="email-ko">lexitale.support@gmail.com</a>
+        </div>
+        <p>메일 제목에 "LexiTale 계정 회원탈퇴 신청"이라고 적어주세요. 계정 보안을 위해 본인 확인을 요청할 수 있으니 메일에 비밀번호, 인증 코드 등 민감한 정보를 포함하지 마십시오.</p>
+
+        <h2>삭제되는 데이터 범위</h2>
+        <ul>
+          <li>Firebase Authentication 내의 LexiTale 로그인 계정.</li>
+          <li>해당 계정과 연동된 Cloud Firestore 학습 기록 및 통계 데이터.</li>
+          <li>스마트폰 기기 로컬에 저장된 학습 진도(SQLite) 및 다운로드된 고화질 상황 WebP 이미지 캐시.</li>
+          <li>이전 버전의 신고 스크린샷 첨부 파일은 앱 내 계정 삭제 시 함께 삭제됩니다.</li>
+          <li><em>참고: 새 비식별 피드백은 Firebase UID, 이름, 이메일 또는 스크린샷을 저장하지 않습니다. 특정 계정에 연결되지 않으며 제품 및 콘텐츠 수정 근거로 보관될 수 있습니다.</em></li>
+        </ul>
+
+        <h2>기기의 데이터</h2>
+        <p>클라우드 데이터 삭제와 별개로, 기기 설정에서 "앱 데이터 지우기" 또는 "LexiTale 앱 삭제"를 통해 즉시 스마트폰 로컬의 모든 데이터를 영구 제거할 수 있습니다.</p>
+
+        <h2>개인정보처리방침</h2>
+        <p>더 자세한 정보와 데이터 처리 방침은 <a href="../privacy-policy/" id="privacy-link-ko">LexiTale 개인정보처리방침</a>에서 확인해 주세요.</p>
+      </div>
     </article>
   </main>
+
+  <script>
+    function switchLanguage(lang) {
+      // Toggle button states
+      const buttons = document.querySelectorAll('.lang-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      const activeButton = document.getElementById('btn-' + lang);
+      if (activeButton) activeButton.classList.add('active');
+
+      // Toggle content section display
+      const sections = document.querySelectorAll('.lang-section');
+      sections.forEach(sec => sec.style.display = 'none');
+
+      const activeSection = document.getElementById('sec-' + lang);
+      if (activeSection) {
+        activeSection.style.display = 'block';
+        // Fade in animation
+        activeSection.style.opacity = 0;
+        let opacity = 0;
+        const timer = setInterval(() => {
+          if (opacity >= 1) clearInterval(timer);
+          activeSection.style.opacity = opacity;
+          opacity += 0.1;
+        }, 15);
+      }
+
+      // Update HTML lang attribute
+      document.documentElement.lang = lang === 'zh-cn' ? 'zh-Hans' : (lang === 'zh' ? 'zh-Hant' : lang);
+    }
+
+    // Auto-detect browser language at startup
+    window.addEventListener('DOMContentLoaded', () => {
+      const userLang = (navigator.language || navigator.userLanguage).toLowerCase();
+      if (userLang.startsWith('zh-cn')) {
+        switchLanguage('zh-cn');
+      } else if (userLang.startsWith('zh')) {
+        switchLanguage('zh');
+      } else if (userLang.startsWith('ja')) {
+        switchLanguage('ja');
+      } else if (userLang.startsWith('ko')) {
+        switchLanguage('ko');
+      } else {
+        switchLanguage('en');
+      }
+    });
+  </script>
 </body>
 </html>

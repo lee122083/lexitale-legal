@@ -3,128 +3,487 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LexiTale 隱私權政策</title>
+  <title id="page-title">LexiTale 隱私權政策 | Privacy Policy</title>
   <style>
     :root {
       color-scheme: light;
-      --bg: #f8fafc;
-      --panel: #ffffff;
-      --text: #172033;
-      --muted: #5b6475;
-      --border: #d8dee8;
-      --accent: #1f6feb;
+      --bg: hsl(210, 40%, 98%);
+      --panel: hsl(0, 0%, 100%);
+      --text: hsl(220, 40%, 15%);
+      --muted: hsl(220, 15%, 45%);
+      --border: hsl(214, 32%, 91%);
+      --accent: hsl(215, 90%, 55%);
+      --accent-hover: hsl(215, 90%, 45%);
+      --accent-light: hsl(215, 90%, 96%);
     }
 
     body {
       margin: 0;
       background: var(--bg);
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", "Noto Sans SC", "Noto Sans JP", "Noto Sans KR", sans-serif;
       line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
     }
 
     main {
       max-width: 860px;
       margin: 0 auto;
-      padding: 48px 20px 72px;
+      padding: 40px 20px 72px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 10px rgba(31, 111, 235, 0.25);
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }
+
+    /* Language Switcher */
+    .lang-switcher {
+      display: flex;
+      background: hsl(210, 20%, 93%);
+      border-radius: 20px;
+      padding: 4px;
+      gap: 2px;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .lang-btn:hover {
+      color: var(--text);
+    }
+
+    .lang-btn.active {
+      background: var(--panel);
+      color: var(--accent);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     }
 
     article {
       background: var(--panel);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 32px;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+      transition: transform 0.3s ease;
     }
 
     h1 {
       margin: 0 0 8px;
-      font-size: 2rem;
+      font-size: 2.1rem;
+      font-weight: 900;
       line-height: 1.25;
+      letter-spacing: -0.5px;
     }
 
     h2 {
-      margin-top: 32px;
-      font-size: 1.25rem;
+      margin-top: 36px;
+      font-size: 1.35rem;
+      font-weight: 800;
+      border-bottom: 2px solid var(--bg);
+      padding-bottom: 8px;
+      color: var(--text);
     }
 
-    p,
+    p, li {
+      font-size: 1.05rem;
+      color: hsl(220, 25%, 25%);
+    }
+
     li {
-      font-size: 1rem;
+      margin-bottom: 8px;
     }
 
     .meta {
       color: var(--muted);
       margin-top: 0;
+      font-size: 0.9rem;
+      font-weight: 500;
     }
 
     a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+
+    ol, ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      list-style-type: square;
+    }
+
+    ul li::marker {
       color: var(--accent);
     }
 
     @media (max-width: 640px) {
       main {
-        padding: 24px 12px 48px;
+        padding: 20px 12px 48px;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .lang-switcher {
+        width: 100%;
+        justify-content: space-between;
+        overflow-x: auto;
+      }
+
+      .lang-btn {
+        flex: 1;
+        padding: 6px 8px;
+        font-size: 0.8rem;
       }
 
       article {
-        padding: 22px;
+        padding: 24px 20px;
       }
 
       h1 {
-        font-size: 1.65rem;
+        font-size: 1.7rem;
       }
     }
   </style>
 </head>
 <body>
   <main>
+    <header>
+      <div class="logo-container">
+        <div class="logo-icon">L</div>
+        <div class="logo-text">LexiTale</div>
+      </div>
+      <div class="lang-switcher" id="lang-switcher" role="navigation" aria-label="Language Selector">
+        <button class="lang-btn active" onclick="switchLanguage('zh')" id="btn-zh">繁中</button>
+        <button class="lang-btn" onclick="switchLanguage('zh-cn')" id="btn-zh-cn">简中</button>
+        <button class="lang-btn" onclick="switchLanguage('en')" id="btn-en">EN</button>
+        <button class="lang-btn" onclick="switchLanguage('ja')" id="btn-ja">日本語</button>
+        <button class="lang-btn" onclick="switchLanguage('ko')" id="btn-ko">한국어</button>
+      </div>
+    </header>
+
     <article>
-      <h1>LexiTale 隱私權政策</h1>
-      <p class="meta">生效日期：2026 年 5 月 26 日</p>
+      <!-- Traditional Chinese (ZH) -->
+      <div class="lang-section" id="sec-zh">
+        <h1 id="title-zh">LexiTale 隱私權政策</h1>
+        <p class="meta">生效日期：2026 年 7 月 13 日</p>
+        <p>LexiTale（以下稱「我們」）致力於保護您的隱私。本隱私權政策說明 LexiTale Android App 如何收集、使用、同步及保護您的資訊。</p>
 
-      <p>LexiTale（以下稱「我們」）致力於保護您的隱私。本隱私權政策說明 LexiTale Android App 如何收集、使用、同步及保護您的資訊。</p>
+        <h2>1. 資料收集</h2>
+        <ul>
+          <li><strong>本機學習資料：</strong>我們會在您的裝置上儲存學習進度，例如已學單字、收藏、隱藏狀態、複習日期、FSRS 複習參數及自訂單字。這些資料安全儲存在 App 的本地 SQLite 資料庫。</li>
+          <li><strong>登入資料：</strong>App 使用 Google 登入並透過 Firebase Authentication 處理登入，以識別使用者並取得基本登入資訊（如電子郵件或顯示名稱）。</li>
+          <li><strong>雲端同步資料：</strong>為防範資料丟失並提供進度保存，登入後您的學習進度會透過 Cloud Firestore 雲端資料庫保存。</li>
+          <li><strong>去識別化意見資料：</strong>若您使用 App 內回報功能，我們會保存回報類型、選填說明、必要的字卡 ID／內容包／排序參照，以及 App 版本、裝置型號與作業系統、語言、登入狀態和畫面位置等診斷資訊。回報不儲存 Firebase UID、姓名、信箱、截圖或整張字卡內容快照；疑似信箱與電話號碼會自動遮蔽。請勿在自由文字填入個人資料。</li>
+          <li><strong>外部字典查詢：</strong>當您新增自訂單字時，App 會透過 API 檢索字典釋義，不包含個人可識別資訊。</li>
+        </ul>
 
-      <h2>1. 資料收集</h2>
-      <ul>
-        <li><strong>本機學習資料：</strong>我們會在您的裝置上儲存學習進度，例如已學單字、收藏、隱藏狀態、複習日期、FSRS 複習參數及自訂單字。這些資料預設儲存在 App 的本機資料庫。</li>
-        <li><strong>登入資料：</strong>App 需要使用 Google 登入，並透過 Firebase Authentication 處理登入，以取得 Firebase 使用者 ID 及 Google 帳號提供的基本登入識別資訊，例如電子郵件或顯示名稱。</li>
-        <li><strong>雲端同步資料：</strong>登入後，學習紀錄會透過 Cloud Firestore 保存，用於跨裝置還原或同步進度。同步資料包含單字 ID、字根或詞條、單字包、收藏或隱藏狀態、FSRS 狀態、上次複習日期與下次複習日期。</li>
-        <li><strong>錯誤回報資料：</strong>若您回報字卡問題，App 可能會送出單字 ID、詞條、回報原因、當時的字卡內容快照及回報時間。MVP 版本不在字卡回報中保存您的 Firebase UID。</li>
-        <li><strong>外部字典查詢：</strong>若您使用新增或查詢單字功能，App 可能會將您輸入的英文單字傳送至第三方免費字典 API，以取得發音、詞性、定義或例句。</li>
-      </ul>
+        <h2>2. 資料使用</h2>
+        <ul>
+          <li>您的學習資料僅用於提供核心單字記憶複習、自適應排程、進度統計與雲端還原同步。</li>
+          <li>我們不出售任何使用者資料，也不會將您的學習歷史用於任何商業廣告追蹤。</li>
+          <li>去識別化意見資料僅用於找出、排序與修正內容或產品問題。</li>
+          <li>體驗版 MVP 不包含任何廣告或付款卡片處理，未來若啟用付費或廣告服務，會重新更新本政策。</li>
+        </ul>
 
-      <h2>2. 資料使用</h2>
-      <ul>
-        <li>您的學習資料用於提供閃卡複習、學習進度統計、收藏、隱藏、自訂單字、FSRS 複習排程及雲端還原功能。</li>
-        <li>錯誤回報資料用於檢查與修正字卡內容品質。</li>
-        <li>我們不出售您的個人資料，也不使用您的資料進行廣告追蹤。</li>
-        <li>MVP 版本不內建第三方廣告、精準定位、相機、麥克風或聯絡人存取功能。若未來版本加入廣告、付款或分析功能，我們會在正式上線前更新本政策與 Google Play 資料揭露。</li>
-      </ul>
+        <h2>3. 資料保護</h2>
+        <ul>
+          <li>本機資料嚴格限制在應用程式專屬 SQLite 沙盒中。</li>
+          <li>雲端通訊使用安全傳輸加密，並依據 Firestore 資料庫安全規則限定個人僅能讀寫自己綁定 UID 的資料。</li>
+          <li>高品質字卡圖片可能透過 Firebase CDN 載入；MVP 音訊資產目前隨 App 安裝包提供或由本機快取檢查，不從 Firebase 音訊 CDN 下載。這些公開學習資產不含個人學習紀錄。</li>
+        </ul>
 
-      <h2>3. 資料保護</h2>
-      <ul>
-        <li>本機資料儲存在您的手機應用程式專屬目錄。</li>
-        <li>雲端登入、同步與錯誤回報資料由 Firebase Authentication 與 Cloud Firestore 處理。</li>
-        <li>字卡圖片與音訊可能透過 Firebase Storage/CDN 載入；這些公開學習資產不包含您的個人學習紀錄。</li>
-        <li>我們會以最小必要原則設計資料流，並限制可寫入雲端的帳號關聯資料。</li>
-      </ul>
+        <h2>4. 權限說明</h2>
+        <ul>
+          <li><strong>網路存取 (INTERNET)：</strong>用於 Google 登入、進度同步、回報或客服資料傳輸、外部字典查詢，以及下載高品質字卡 WebP 圖片。</li>
+          <li><strong>震動控制 (VIBRATE)：</strong>用於在學習評分時提供流暢精緻的觸覺震動回饋。</li>
+          <li><strong>通知權限 (POST_NOTIFICATIONS)：</strong>僅用於您開啟的本地學習提醒。</li>
+          <li><strong>開機完成事件 (RECEIVE_BOOT_COMPLETED)：</strong>僅用於裝置重啟或 App 更新後重新排程已開啟的本地提醒。</li>
+        </ul>
 
-      <h2>4. 權限說明</h2>
-      <ul>
-        <li><strong>網路存取：</strong>用於同步學習進度，以及下載字卡圖片與音訊等學習資產。</li>
-        <li><strong>震動控制：</strong>用於提供觸感回饋以提升學習體驗。</li>
-      </ul>
+        <h2>5. 資料刪除</h2>
+        <p>您可以在 App 的設定頁直接選擇「刪除帳號」，或使用公開的 <a href="../account-deletion/">帳號刪除說明網頁</a> 送出申請。App 會刪除 Cloud Firestore 中的雲端學習進度與統計資料、舊版以帳號路徑保存的回報截圖附件、裝置本機 SQLite 學習資料與高品質圖片快取，並嘗試刪除 LexiTale 的 Firebase Authentication 登入帳號。舊版原始回報會完成一次性去識別化並刪除聯絡資料、附件參照與完整字卡快照；原始文件之後由管理端刪除。長期保留的去識別化意見紀錄不含帳號識別碼，可能作為產品與內容修正證據。若 Firebase 要求近期登入或 App 無法完成登入帳號刪除，您仍可透過公開帳號刪除頁或客服信箱要求我們完成帳號與相關雲端資料刪除。</p>
 
-      <h2>5. 資料刪除</h2>
-      <p>您可在 App 的設定頁選擇「刪除帳號」，重新完成 Google 驗證後，刪除 LexiTale 的 Firebase Authentication 帳號與綁定該帳號的 Cloud Firestore 學習進度。MVP 版本的新字卡回報不保存 Firebase UID，因此不會建立可依帳號識別的回報資料。本機資料可透過清除 App 資料或解除安裝 App 移除。</p>
-      <p>您也可使用可在未安裝 App 時開啟的<a href="../account-deletion/">公開帳號刪除申請網頁</a>，要求刪除帳號及相關雲端資料。</p>
+        <h2>6. 聯絡我們</h2>
+        <p>若對本隱私政策有任何意見或疑問，請發送郵件至：<a href="mailto:lexitale.support@gmail.com">lexitale.support@gmail.com</a></p>
+      </div>
 
-      <h2>6. 付費與購買資料</h2>
-      <p>MVP 版本的會員頁面目前僅為功能入口或預告，不在 App 內直接處理信用卡、付款卡號或銀行資料。若未來啟用 Google Play Billing 或其他付費功能，本政策會在正式上線前更新。</p>
+      <!-- Simplified Chinese (ZH-CN) -->
+      <div class="lang-section" id="sec-zh-cn" style="display: none;">
+        <h1 id="title-zh-cn">LexiTale 隐私权政策</h1>
+        <p class="meta">生效日期：2026 年 7 月 13 日</p>
+        <p>LexiTale（以下称「我们」）致力于保护您的隐私。本隐私权政策说明 LexiTale Android App 如何收集、使用、同步及保护您的信息。</p>
 
-      <h2>7. 聯絡我們</h2>
-      <p>若對本政策有任何疑問，請寄送電子郵件至 <a href="mailto:lexitale.support@gmail.com">lexitale.support@gmail.com</a>。</p>
+        <h2>1. 数据收集</h2>
+        <ul>
+          <li><strong>本机学习数据：</strong>我们会在您的设备上存储学习进度，例如已学单词、收藏、隐藏状态、复习日期、FSRS 复习参数及自定义单词。这些数据安全存储在 App 的本地 SQLite 数据库。</li>
+          <li><strong>登录数据：</strong>App 使用 Google 登录并通过 Firebase Authentication 处理登录，以识别用户并取得基本登录信息（如电子邮件或显示名称）。</li>
+          <li><strong>云端同步数据：</strong>为防范数据丢失并提供进度保存，登录后您的学习进度会通过 Cloud Firestore 云端数据库保存。</li>
+          <li><strong>去标识化意见数据：</strong>若您使用 App 内反馈功能，我们会保存反馈类型、选填说明、必要的单词卡 ID／内容包／排序参照，以及 App 版本、设备型号与系统、语言、登录状态和画面位置等诊断信息。反馈不保存 Firebase UID、姓名、邮箱、截图或整张单词卡内容快照；疑似邮箱与电话号码会自动遮蔽。请勿在自由文字中填写个人信息。</li>
+          <li><strong>外部字典查询：</strong>当您新增自定义单词时，App 会通过 API 检索字典释义，不包含个人可识别信息。</li>
+        </ul>
+
+        <h2>2. 数据使用</h2>
+        <ul>
+          <li>您的学习数据仅用于提供核心单词记忆复习、自适应排程、进度统计与云端还原同步。</li>
+          <li>我们不出售任何用户数据，也不会将您的学习历史用于任何商业广告追踪。</li>
+          <li>去标识化意见数据仅用于发现、排序与修正内容或产品问题。</li>
+          <li>体验版 MVP 不包含任何广告或付款卡片处理，未来若启用付费或广告服务，会重新更新本政策。</li>
+        </ul>
+
+        <h2>3. 数据保护</h2>
+        <ul>
+          <li>本机数据严格限制在应用程序专属 SQLite 沙盒中。</li>
+          <li>云端通讯使用安全传输加密，并依据 Firestore 数据库安全规则限定个人仅能读写自己绑定 UID 的数据。</li>
+          <li>高品质字卡图片可能通过 Firebase CDN 载入；MVP 音频资产目前随 App 安装包提供或由本机缓存检查，不从 Firebase 音频 CDN 下载。这些公开学习资产不含个人学习纪录。</li>
+        </ul>
+
+        <h2>4. 权限说明</h2>
+        <ul>
+          <li><strong>网络存取 (INTERNET)：</strong>用于 Google 登录、进度同步、汇报或客服资料传输、外部字典查询，以及下载高品质字卡 WebP 图片。</li>
+          <li><strong>震动控制 (VIBRATE)：</strong>用于在学习评分时提供流畅精致的触觉震动反馈。</li>
+          <li><strong>通知权限 (POST_NOTIFICATIONS)：</strong>仅用于您开启的本地学习提醒。</li>
+          <li><strong>开机完成事件 (RECEIVE_BOOT_COMPLETED)：</strong>仅用于设备重启或 App 更新后重新排程已开启的本地提醒。</li>
+        </ul>
+
+        <h2>5. 数据删除</h2>
+        <p>您可以在 App 的设置页直接选择「删除账号」，或使用公开的 <a href="../account-deletion/">账号删除说明网页</a> 送出申请。App 会删除 Cloud Firestore 中的云端学习进度与统计数据、旧版按账号路径保存的反馈截图附件、设备本机 SQLite 学习数据与高品质图片缓存，并尝试删除 LexiTale 的 Firebase Authentication 登录账号。旧版原始反馈会完成一次性去标识化，并移除联系资料、附件引用与完整单词卡快照；之后由管理员删除原始文档。长期保留的去标识化意见记录不含账号标识符，可能作为产品与内容修正证据。若 Firebase 要求近期登录或 App 无法完成登录账号删除，您仍可通过公开账号删除页或客服邮箱要求我们完成账号与相关云端数据删除。</p>
+
+        <h2>6. 联系我们</h2>
+        <p>若对本隐私政策有任何意见或疑问，请发送邮件至：<a href="mailto:lexitale.support@gmail.com">lexitale.support@gmail.com</a></p>
+      </div>
+
+      <!-- English (EN) -->
+      <div class="lang-section" id="sec-en" style="display: none;">
+        <h1 id="title-en">LexiTale Privacy Policy</h1>
+        <p class="meta">Effective Date: July 13, 2026</p>
+        <p>LexiTale ("we", "us", or "our") is dedicated to protecting your privacy. This policy describes how the LexiTale Android App collects, uses, syncs, and protects your information.</p>
+
+        <h2>1. Data Collection</h2>
+        <ul>
+          <li><strong>Local Learning Data:</strong> We save your learning progress (such as mastered words, bookmarks, hidden states, intervals, FSRS parameters, and custom words) securely in a local SQLite database.</li>
+          <li><strong>Sign-In Data:</strong> The App uses Google Sign-In managed by Firebase Authentication to identify users and retrieve basic profile info (email and display name).</li>
+          <li><strong>Cloud Synchronization:</strong> To prevent data loss, your progress is backed up securely in our Cloud Firestore database.</li>
+          <li><strong>Deidentified Feedback:</strong> In-app feedback stores its type, optional details, the necessary card ID/pack/rank reference, and diagnostics such as App version, device model and OS, language, sign-in state, and screen location. It does not store a Firebase UID, name, email, screenshot, or full card-content snapshot. Likely email addresses and phone numbers are automatically redacted. Do not enter personal information in free text.</li>
+          <li><strong>Dictionary Services:</strong> Adding custom words queries third-party dictionary APIs for definitions. No personally identifiable data is sent.</li>
+        </ul>
+
+        <h2>2. Data Usage</h2>
+        <ul>
+          <li>Your learning progress is strictly used to deliver card scheduling (FSRS), bookmarks, learning stats, and secure cloud sync/restoration.</li>
+          <li>We never sell your data, nor do we track your learning history for targeted commercial advertising.</li>
+          <li>Deidentified feedback is used only to find, prioritize, and fix content or product issues.</li>
+          <li>The MVP version does not process payments or serve third-party ads. Any future paid features will be updated in this policy.</li>
+        </ul>
+
+        <h2>3. Data Security</h2>
+        <ul>
+          <li>Local data is isolated securely in the sandbox SQLite database of your Android device.</li>
+          <li>Cloud interactions are encrypted and restricted by Firebase Firestore security rules, allowing only authorized UID owners to read or write their own documents.</li>
+          <li>High-quality card images may be loaded through Firebase CDN. MVP audio assets are currently bundled with the App or checked through local cache, not downloaded from Firebase audio CDN. These public learning assets do not contain personal learning records.</li>
+        </ul>
+
+        <h2>4. Permissions</h2>
+        <ul>
+          <li><strong>INTERNET:</strong> Required for Google Sign-In, cloud backups, report/support data transfer, dictionary API queries, and downloading high-quality WebP learning images.</li>
+          <li><strong>VIBRATE:</strong> Used to trigger subtle haptic vibrations during card rating to enhance UX.</li>
+          <li><strong>POST_NOTIFICATIONS:</strong> Used only for local study reminders you enable.</li>
+          <li><strong>RECEIVE_BOOT_COMPLETED:</strong> Used only to reschedule enabled local study reminders after device restart or App update.</li>
+        </ul>
+
+        <h2>5. Data Deletion</h2>
+        <p>You can select "Delete Account" in the App Settings sheet or submit a request on our <a href="../account-deletion/">Account Deletion Web Page</a>. The App deletes your Cloud Firestore learning progress and statistics, legacy report screenshot attachments stored under the account path, local SQLite learning data, and high-quality image caches, and attempts to delete your LexiTale Firebase Authentication login account. Legacy raw reports undergo a one-time deidentification that removes contact data, attachment references, and full card snapshots; administrators then delete the raw documents. Long-term deidentified feedback has no account identifier and may be retained as evidence for product and content fixes. If Firebase requires recent sign-in or the App cannot complete login-account deletion, you can still use the public deletion page or support email to request deletion of the account and associated cloud data.</p>
+
+        <h2>6. Contact Us</h2>
+        <p>If you have any questions or feedback regarding this policy, contact us at: <a href="mailto:lexitale.support@gmail.com">lexitale.support@gmail.com</a></p>
+      </div>
+
+      <!-- Japanese (JA) -->
+      <div class="lang-section" id="sec-ja" style="display: none;">
+        <h1 id="title-ja">LexiTale プライバシーポリシー</h1>
+        <p class="meta">発効日：2026年7月13日</p>
+        <p>LexiTale（以下「私たち」）は、ユーザーのプライバシーの保護に努めています。本ポリシーでは、LexiTale Android アプリがユーザーの情報をどのように収集、使用、同期、および保護するかについて説明します。</p>
+
+        <h2>1. 情報の収集</h2>
+        <ul>
+          <li><strong>ローカル学習データ：</strong>学習進度（学習単語、ブックマーク、アーカイブ状態、FSRS 復習パラメーター、カスタム単語など）は、端末のローカル SQLite データベースに安全に保存されます。</li>
+          <li><strong>ログイン情報：</strong>アプリは Google ログインを使用し、Firebase Authentication を介してユーザーを識別し、基本プロファイル（メールアドレス、表示名）を取得します。</li>
+          <li><strong>クラウド同期データ：</strong>データの紛失を防ぐため、ログイン後は Cloud Firestore に学習履歴が自動的にバックアップされます。</li>
+          <li><strong>匿名化フィードバック：</strong>アプリ内フィードバックには、種類、任意の説明、必要なカード ID／パック／順位参照、アプリのバージョン、端末モデルと OS、言語、ログイン状態、画面位置などの診断情報を保存します。Firebase UID、氏名、メール、スクリーンショット、カード内容全体のスナップショットは保存しません。メールアドレスや電話番号らしい文字列は自動で伏せ字にします。自由記述に個人情報を入力しないでください。</li>
+        </ul>
+
+        <h2>2. 情報の使用</h2>
+        <ul>
+          <li>学習データは、単語カードの復習スケジュール調整、学習統計、およびクラウド復元同期の提供のみに使用されます。</li>
+          <li>私たちはユーザーデータを第三者に販売せず、広告目的の追跡も行いません。</li>
+          <li>匿名化フィードバックは、コンテンツまたは製品の問題の発見、優先順位付け、修正にのみ使用します。</li>
+          <li>MVP 版には広告や決済処理は含まれていません。将来的に機能が追加される場合は本ポリシーを更新します。</li>
+        </ul>
+
+        <h2>3. 情報の保護</h2>
+        <ul>
+          <li>端末内のデータは、アプリ専用の SQLite サンドボックスに隔離保護されます。</li>
+          <li>クラウドとの通信は暗号化され、Firestore の安全規則によって本人のみがデータにアクセスできるように制限されています。</li>
+          <li>高品質カード画像は Firebase CDN 経由で読み込まれる場合があります。MVP の音声アセットは現在アプリに同梱、またはローカルキャッシュで確認され、Firebase 音声 CDN からはダウンロードされません。これらの公開学習アセットには個人の学習履歴は含まれません。</li>
+        </ul>
+
+        <h2>4. アプリ権限の説明</h2>
+        <ul>
+          <li><strong>インターネットアクセス (INTERNET)：</strong>Google ログイン、同期処理、報告・サポートデータ送信、外部辞書 API 照会、高品質 WebP 学習画像のダウンロードに必要です。</li>
+          <li><strong>バイブレーション制御 (VIBRATE)：</strong>カードの評価時、学習体験向上のための心地よい触覚フィードバックを提供します。</li>
+          <li><strong>通知権限 (POST_NOTIFICATIONS)：</strong>ユーザーが有効にしたローカル学習リマインダーにのみ使用します。</li>
+          <li><strong>起動完了イベント (RECEIVE_BOOT_COMPLETED)：</strong>端末再起動またはアプリ更新後、有効なローカル学習リマインダーを再設定するためにのみ使用します。</li>
+        </ul>
+
+        <h2>5. データの削除</h2>
+        <p>アプリの「アカウント削除」ボタン、または <a href="../account-deletion/">アカウント削除申請ページ</a> から手続きを行えます。アプリは Cloud Firestore の学習進度と統計、アカウントのパスに保存された旧版の報告スクリーンショット添付、端末の SQLite 学習データ、高品質画像キャッシュを削除し、LexiTale の Firebase Authentication ログインアカウントの削除を試みます。旧版の生の報告は一度限りの匿名化処理で連絡先、添付参照、カード全体のスナップショットを除去し、その後管理者が元の文書を削除します。長期保持する匿名化フィードバックにはアカウント識別子がなく、製品・コンテンツ修正の証拠として保持される場合があります。Firebase が最近のログインを要求する場合、またはアプリ内でログインアカウント削除を完了できない場合でも、公開削除ページまたはサポートメールからアカウントと関連クラウドデータの削除を申請できます。</p>
+
+        <h2>6. お問い合わせ</h2>
+        <p>プライバシーポリシーに関するご質問は、以下のアドレスまでご連絡ください：<a href="mailto:lexitale.support@gmail.com">lexitale.support@gmail.com</a></p>
+      </div>
+
+      <!-- Korean (KO) -->
+      <div class="lang-section" id="sec-ko" style="display: none;">
+        <h1 id="title-ko">LexiTale 개인정보처리방침</h1>
+        <p class="meta">시행일자: 2026년 7월 13일</p>
+        <p>LexiTale(이하 "당사")은 사용자의 개인정보 보호를 위해 최선을 다하고 있습니다. 본 개인정보처리방침은 LexiTale Android 앱이 어떻게 사용자의 정보를 수집, 사용, 동기화 및 보호하는지 설명합니다.</p>
+
+        <h2>1. 정보 수집</h2>
+        <ul>
+          <li><strong>로컬 학습 데이터:</strong> 학습 진도(학습한 단어, 북마크, 숨김 상태, FSRS 매개변수 및 사용자 정의 단어 등)는 스마트폰 기기의 로컬 SQLite 데이터베이스에 안전하게 저장됩니다.</li>
+          <li><strong>로그인 정보:</strong> 앱은 Google 로그인을 사용하며, Firebase Authentication을 통해 사용자를 식별하고 이메일이나 표시 이름과 같은 기본 프로필 정보를 수집합니다.</li>
+          <li><strong>클라우드 동기화 데이터:</strong> 데이터 손실을 방지하고 복원 기능을 제공하기 위해, 로그인 후 학습 기록이 Cloud Firestore 클라우드 데이터베이스에 보관됩니다.</li>
+          <li><strong>비식별 피드백:</strong> 앱 내 피드백에는 유형, 선택 설명, 필요한 카드 ID／팩／순위 참조, 앱 버전, 기기 모델과 OS, 언어, 로그인 상태, 화면 위치 등의 진단 정보를 저장합니다. Firebase UID, 이름, 이메일, 스크린샷 또는 전체 카드 내용 스냅샷은 저장하지 않습니다. 이메일 주소나 전화번호로 보이는 문자열은 자동으로 가립니다. 자유 입력란에 개인정보를 넣지 마세요.</li>
+        </ul>
+
+        <h2>2. 정보 사용</h2>
+        <ul>
+          <li>사용자의 학습 데이터는 단어 카드 학습 최적화(FSRS), 북마크, 학습 통계 및 안전한 클라우드 진도 복원 기능에만 제한적으로 사용됩니다.</li>
+          <li>당사는 사용자의 어떠한 데이터도 판매하지 않으며, 학습 이력을 타겟 광고 등에 활용하지 않습니다.</li>
+          <li>비식별 피드백은 콘텐츠 또는 제품 문제를 찾고 우선순위를 정해 수정하는 데만 사용합니다.</li>
+          <li>현재 MVP 버전은 광고 서빙이나 결제 데이터를 처리하지 않습니다. 향후 과금 기능 도입 시 본 정책을 갱신합니다.</li>
+        </ul>
+
+        <h2>3. 정보 보호</h2>
+        <ul>
+          <li>기기 내부의 데이터는 앱 전용 SQLite 샌드박스로 격리되어 안전하게 보호됩니다.</li>
+          <li>클라우드와의 모든 통신은 보안 암호화되며, Firestore 보안 규칙에 의거하여 승인된 UID 본인만 데이터에 액세스할 수 있습니다.</li>
+          <li>고화질 단어 카드 이미지는 Firebase CDN을 통해 로드될 수 있습니다. MVP 오디오 자산은 현재 앱 설치 패키지에 포함되거나 로컬 캐시로 확인되며 Firebase 오디오 CDN에서 다운로드되지 않습니다. 이러한 공개 학습 자산에는 개인 학습 기록이 포함되지 않습니다.</li>
+        </ul>
+
+        <h2>4. 권한 설명</h2>
+        <ul>
+          <li><strong>네트워크 액세스 (INTERNET):</strong> Google 로그인, 클라우드 동기화, 신고/지원 데이터 전송, 외부 사전 API 조회, 고화질 WebP 학습 이미지 다운로드에 사용됩니다.</li>
+          <li><strong>진동 제어 (VIBRATE):</strong> 카드 평가 시 부드러운 햅틱 진동 피드백을 제공하여 학습 경험을 향상시킵니다.</li>
+          <li><strong>알림 권한 (POST_NOTIFICATIONS):</strong> 사용자가 켠 로컬 학습 알림에만 사용됩니다.</li>
+          <li><strong>부팅 완료 이벤트 (RECEIVE_BOOT_COMPLETED):</strong> 기기 재시작 또는 앱 업데이트 후 켜져 있는 로컬 학습 알림을 다시 예약하는 데만 사용됩니다.</li>
+        </ul>
+
+        <h2>5. 데이터 삭제</h2>
+        <p>앱 내 설정 메뉴의 "회원탈퇴"를 선택하거나 외부 <a href="../account-deletion/">회원탈퇴 신청 페이지</a>를 통해 언제든지 요청할 수 있습니다. 앱은 Cloud Firestore 학습 기록과 통계, 계정 경로에 저장된 이전 버전 신고 스크린샷 첨부, 기기의 SQLite 학습 데이터 및 고화질 이미지 캐시를 삭제하고 LexiTale Firebase Authentication 로그인 계정 삭제를 시도합니다. 이전 버전의 원본 신고는 일회성 비식별화 과정에서 연락처, 첨부 참조, 전체 카드 스냅샷을 제거한 뒤 관리자가 원본 문서를 삭제합니다. 장기 보관되는 비식별 피드백에는 계정 식별자가 없으므로 제품 및 콘텐츠 수정 근거로 보관될 수 있습니다. Firebase가 최근 로그인을 요구하거나 앱에서 로그인 계정 삭제를 완료할 수 없는 경우에도 공개 삭제 페이지 또는 지원 이메일을 통해 계정과 관련 클라우드 데이터 삭제를 요청할 수 있습니다.</p>
+
+        <h2>6. 문의하기</h2>
+        <p>본 방침에 대한 문의사항이나 의견은 다음 메일로 보내주시기 바랍니다: <a href="mailto:lexitale.support@gmail.com">lexitale.support@gmail.com</a></p>
+      </div>
     </article>
   </main>
+
+  <script>
+    function switchLanguage(lang) {
+      // Toggle button states
+      const buttons = document.querySelectorAll('.lang-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      const activeButton = document.getElementById('btn-' + lang);
+      if (activeButton) activeButton.classList.add('active');
+
+      // Toggle content section display
+      const sections = document.querySelectorAll('.lang-section');
+      sections.forEach(sec => sec.style.display = 'none');
+
+      const activeSection = document.getElementById('sec-' + lang);
+      if (activeSection) {
+        activeSection.style.display = 'block';
+        // Fade in animation
+        activeSection.style.opacity = 0;
+        let opacity = 0;
+        const timer = setInterval(() => {
+          if (opacity >= 1) clearInterval(timer);
+          activeSection.style.opacity = opacity;
+          opacity += 0.1;
+        }, 15);
+      }
+
+      // Update HTML lang attribute
+      document.documentElement.lang = lang === 'zh-cn' ? 'zh-Hans' : (lang === 'zh' ? 'zh-Hant' : lang);
+    }
+
+    // Auto-detect browser language at startup
+    window.addEventListener('DOMContentLoaded', () => {
+      const userLang = (navigator.language || navigator.userLanguage).toLowerCase();
+      if (userLang.startsWith('zh-cn')) {
+        switchLanguage('zh-cn');
+      } else if (userLang.startsWith('zh')) {
+        switchLanguage('zh');
+      } else if (userLang.startsWith('ja')) {
+        switchLanguage('ja');
+      } else if (userLang.startsWith('ko')) {
+        switchLanguage('ko');
+      } else {
+        switchLanguage('en');
+      }
+    });
+  </script>
 </body>
 </html>
