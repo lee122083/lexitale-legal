@@ -234,19 +234,19 @@
           <li>您的學習資料僅用於提供核心單字記憶複習、自適應排程、進度統計與雲端還原同步。</li>
           <li>我們不出售任何使用者資料，也不會將您的學習歷史用於任何商業廣告追蹤。</li>
           <li>去識別化意見資料僅用於找出、排序與修正內容或產品問題。</li>
-          <li>體驗版 MVP 不包含任何廣告或付款卡片處理，未來若啟用付費或廣告服務，會重新更新本政策。</li>
+          <li>目前散布的 3.0.43+346 不包含第三方廣告或付款卡片處理；廣告版候選的資料處理另列於下方。</li>
         </ul>
 
         <h2>3. 資料保護</h2>
         <ul>
           <li>本機資料嚴格限制在應用程式專屬 SQLite 沙盒中。</li>
           <li>雲端通訊使用安全傳輸加密，並依據 Firestore 資料庫安全規則限定個人僅能讀寫自己綁定 UID 的資料。</li>
-          <li>高品質字卡圖片可能透過 Firebase CDN 載入；MVP 音訊資產目前隨 App 安裝包提供或由本機快取檢查，不從 Firebase 音訊 CDN 下載。這些公開學習資產不含個人學習紀錄。</li>
+          <li>核准的標準字卡圖片與音訊會視需要透過 Firebase Storage/CDN 下載，完成後保存在本機快取；每個級別另保留少量離線啟動素材。這些公開學習資產不含個人學習紀錄。</li>
         </ul>
 
         <h2>4. 權限說明</h2>
         <ul>
-          <li><strong>網路存取 (INTERNET)：</strong>用於 Google 登入、進度同步、回報或客服資料傳輸、外部字典查詢，以及下載高品質字卡 WebP 圖片。</li>
+          <li><strong>網路存取 (INTERNET)：</strong>用於 Google 登入、進度同步、回報或客服資料傳輸、外部字典查詢及下載核准的字卡圖片與音訊；廣告版候選另用於廣告與彙總量測。</li>
           <li><strong>震動控制 (VIBRATE)：</strong>用於在學習評分時提供流暢精緻的觸覺震動回饋。</li>
           <li><strong>通知權限 (POST_NOTIFICATIONS)：</strong>僅用於您開啟的本地學習提醒。</li>
           <li><strong>開機完成事件 (RECEIVE_BOOT_COMPLETED)：</strong>僅用於裝置重啟或 App 更新後重新排程已開啟的本地提醒。</li>
@@ -255,7 +255,10 @@
         <h2>5. 資料刪除</h2>
         <p>您可以在 App 的設定頁直接選擇「刪除帳號」，或使用公開的 <a href="../account-deletion/">帳號刪除說明網頁</a> 送出申請。App 會刪除 Cloud Firestore 中的雲端學習進度與統計資料、舊版以帳號路徑保存的回報截圖附件、裝置本機 SQLite 學習資料與高品質圖片快取，並嘗試刪除 LexiTale 的 Firebase Authentication 登入帳號。舊版原始回報會完成一次性去識別化並刪除聯絡資料、附件參照與完整字卡快照；原始文件之後由管理端刪除。長期保留的去識別化意見紀錄不含帳號識別碼，可能作為產品與內容修正證據。若 Firebase 要求近期登入或 App 無法完成登入帳號刪除，您仍可透過公開帳號刪除頁或客服信箱要求我們完成帳號與相關雲端資料刪除。</p>
 
-        <h2>6. 聯絡我們</h2>
+        <h2>6. 廣告版候選資料處理（尚未發布）</h2>
+        <p>後續廣告版會使用 Google Mobile Ads 顯示獎勵廣告與低頻插頁廣告。SDK 可能處理由 IP 推估的大致位置、App 互動、診斷與裝置識別，用於廣告、分析、防詐、安全與法遵。App 會使用 UMP 處理適用的同意，並在需要時提供廣告隱私選項。Firebase Analytics 僅記錄彙總學習流程與廣告結果，不傳送 Firebase UID、姓名、信箱、字卡文字或自由輸入。</p>
+
+        <h2>7. 聯絡我們</h2>
         <p>若對本隱私政策有任何意見或疑問，請發送郵件至：<a href="mailto:lexitale.support@gmail.com">lexitale.support@gmail.com</a></p>
       </div>
 
@@ -279,19 +282,19 @@
           <li>您的学习数据仅用于提供核心单词记忆复习、自适应排程、进度统计与云端还原同步。</li>
           <li>我们不出售任何用户数据，也不会将您的学习历史用于任何商业广告追踪。</li>
           <li>去标识化意见数据仅用于发现、排序与修正内容或产品问题。</li>
-          <li>体验版 MVP 不包含任何广告或付款卡片处理，未来若启用付费或广告服务，会重新更新本政策。</li>
+          <li>目前发布的 3.0.43+346 不包含第三方广告或付款卡片处理；广告版候选的数据处理另列于下方。</li>
         </ul>
 
         <h2>3. 数据保护</h2>
         <ul>
           <li>本机数据严格限制在应用程序专属 SQLite 沙盒中。</li>
           <li>云端通讯使用安全传输加密，并依据 Firestore 数据库安全规则限定个人仅能读写自己绑定 UID 的数据。</li>
-          <li>高品质字卡图片可能通过 Firebase CDN 载入；MVP 音频资产目前随 App 安装包提供或由本机缓存检查，不从 Firebase 音频 CDN 下载。这些公开学习资产不含个人学习纪录。</li>
+          <li>已核准的标准单词卡图片和音频会按需通过 Firebase Storage/CDN 下载，完成后保存在本机缓存；每个级别另保留少量离线启动素材。这些公开学习资产不含个人学习记录。</li>
         </ul>
 
         <h2>4. 权限说明</h2>
         <ul>
-          <li><strong>网络存取 (INTERNET)：</strong>用于 Google 登录、进度同步、汇报或客服资料传输、外部字典查询，以及下载高品质字卡 WebP 图片。</li>
+          <li><strong>网络存取 (INTERNET)：</strong>用于 Google 登录、进度同步、反馈或客服资料传输、外部字典查询及下载已核准的单词卡图片与音频；广告版候选另用于广告与汇总分析。</li>
           <li><strong>震动控制 (VIBRATE)：</strong>用于在学习评分时提供流畅精致的触觉震动反馈。</li>
           <li><strong>通知权限 (POST_NOTIFICATIONS)：</strong>仅用于您开启的本地学习提醒。</li>
           <li><strong>开机完成事件 (RECEIVE_BOOT_COMPLETED)：</strong>仅用于设备重启或 App 更新后重新排程已开启的本地提醒。</li>
@@ -300,7 +303,10 @@
         <h2>5. 数据删除</h2>
         <p>您可以在 App 的设置页直接选择「删除账号」，或使用公开的 <a href="../account-deletion/">账号删除说明网页</a> 送出申请。App 会删除 Cloud Firestore 中的云端学习进度与统计数据、旧版按账号路径保存的反馈截图附件、设备本机 SQLite 学习数据与高品质图片缓存，并尝试删除 LexiTale 的 Firebase Authentication 登录账号。旧版原始反馈会完成一次性去标识化，并移除联系资料、附件引用与完整单词卡快照；之后由管理员删除原始文档。长期保留的去标识化意见记录不含账号标识符，可能作为产品与内容修正证据。若 Firebase 要求近期登录或 App 无法完成登录账号删除，您仍可通过公开账号删除页或客服邮箱要求我们完成账号与相关云端数据删除。</p>
 
-        <h2>6. 联系我们</h2>
+        <h2>6. 广告版候选数据处理（尚未发布）</h2>
+        <p>后续广告版会使用 Google Mobile Ads 显示奖励广告和低频插页广告。SDK 可能处理由 IP 推断的大致位置、App 互动、诊断和设备标识，用于广告、分析、防欺诈、安全与合规。App 会使用 UMP 处理适用的同意，并在需要时提供广告隐私选项。Firebase Analytics 只记录汇总学习流程和广告结果，不传送 Firebase UID、姓名、邮箱、单词卡文字或自由输入。</p>
+
+        <h2>7. 联系我们</h2>
         <p>若对本隐私政策有任何意见或疑问，请发送邮件至：<a href="mailto:lexitale.support@gmail.com">lexitale.support@gmail.com</a></p>
       </div>
 
@@ -324,19 +330,19 @@
           <li>Your learning progress is strictly used to deliver card scheduling (FSRS), bookmarks, learning stats, and secure cloud sync/restoration.</li>
           <li>We never sell your data, nor do we track your learning history for targeted commercial advertising.</li>
           <li>Deidentified feedback is used only to find, prioritize, and fix content or product issues.</li>
-          <li>The MVP version does not process payments or serve third-party ads. Any future paid features will be updated in this policy.</li>
+          <li>The currently distributed 3.0.43+346 does not process payments or serve third-party ads. The ads-enabled candidate is described below.</li>
         </ul>
 
         <h2>3. Data Security</h2>
         <ul>
           <li>Local data is isolated securely in the sandbox SQLite database of your Android device.</li>
           <li>Cloud interactions are encrypted and restricted by Firebase Firestore security rules, allowing only authorized UID owners to read or write their own documents.</li>
-          <li>High-quality card images may be loaded through Firebase CDN. MVP audio assets are currently bundled with the App or checked through local cache, not downloaded from Firebase audio CDN. These public learning assets do not contain personal learning records.</li>
+          <li>Approved standard card images and audio are downloaded on demand through Firebase Storage/CDN and cached locally after completion. A small offline starter set is bundled for each level. These public learning assets do not contain personal learning records.</li>
         </ul>
 
         <h2>4. Permissions</h2>
         <ul>
-          <li><strong>INTERNET:</strong> Required for Google Sign-In, cloud backups, report/support data transfer, dictionary API queries, and downloading high-quality WebP learning images.</li>
+          <li><strong>INTERNET:</strong> Required for Google Sign-In, cloud backups, report/support data transfer, dictionary API queries, and approved card-image and audio downloads. The ads-enabled candidate also uses it for advertising and aggregate measurement.</li>
           <li><strong>VIBRATE:</strong> Used to trigger subtle haptic vibrations during card rating to enhance UX.</li>
           <li><strong>POST_NOTIFICATIONS:</strong> Used only for local study reminders you enable.</li>
           <li><strong>RECEIVE_BOOT_COMPLETED:</strong> Used only to reschedule enabled local study reminders after device restart or App update.</li>
@@ -345,7 +351,10 @@
         <h2>5. Data Deletion</h2>
         <p>You can select "Delete Account" in the App Settings sheet or submit a request on our <a href="../account-deletion/">Account Deletion Web Page</a>. The App deletes your Cloud Firestore learning progress and statistics, legacy report screenshot attachments stored under the account path, local SQLite learning data, and high-quality image caches, and attempts to delete your LexiTale Firebase Authentication login account. Legacy raw reports undergo a one-time deidentification that removes contact data, attachment references, and full card snapshots; administrators then delete the raw documents. Long-term deidentified feedback has no account identifier and may be retained as evidence for product and content fixes. If Firebase requires recent sign-in or the App cannot complete login-account deletion, you can still use the public deletion page or support email to request deletion of the account and associated cloud data.</p>
 
-        <h2>6. Contact Us</h2>
+        <h2>6. Ads-enabled candidate data processing (not yet released)</h2>
+        <p>A later ads-enabled version will use Google Mobile Ads for rewarded and low-frequency interstitial ads. The SDK may process approximate location inferred from IP, App interactions, diagnostics, and device identifiers for advertising, analytics, fraud prevention, security, and compliance. The App uses UMP for applicable consent and provides ad privacy options when required. Firebase Analytics records only aggregate study-flow and ad outcomes; it does not send a Firebase UID, name, email, card text, or free-form input.</p>
+
+        <h2>7. Contact Us</h2>
         <p>If you have any questions or feedback regarding this policy, contact us at: <a href="mailto:lexitale.support@gmail.com">lexitale.support@gmail.com</a></p>
       </div>
 
@@ -366,21 +375,21 @@
         <h2>2. 情報の使用</h2>
         <ul>
           <li>学習データは、単語カードの復習スケジュール調整、学習統計、およびクラウド復元同期の提供のみに使用されます。</li>
-          <li>私たちはユーザーデータを第三者に販売せず、広告目的の追跡も行いません。</li>
+          <li>私たちはユーザーデータを第三者に販売せず、学習履歴を広告ターゲティングに利用しません。</li>
           <li>匿名化フィードバックは、コンテンツまたは製品の問題の発見、優先順位付け、修正にのみ使用します。</li>
-          <li>MVP 版には広告や決済処理は含まれていません。将来的に機能が追加される場合は本ポリシーを更新します。</li>
+          <li>現在配布中の 3.0.43+346 には第三者広告や決済処理は含まれていません。広告版候補のデータ処理は下記に記載します。</li>
         </ul>
 
         <h2>3. 情報の保護</h2>
         <ul>
           <li>端末内のデータは、アプリ専用の SQLite サンドボックスに隔離保護されます。</li>
           <li>クラウドとの通信は暗号化され、Firestore の安全規則によって本人のみがデータにアクセスできるように制限されています。</li>
-          <li>高品質カード画像は Firebase CDN 経由で読み込まれる場合があります。MVP の音声アセットは現在アプリに同梱、またはローカルキャッシュで確認され、Firebase 音声 CDN からはダウンロードされません。これらの公開学習アセットには個人の学習履歴は含まれません。</li>
+          <li>承認済みの標準カード画像と音声は Firebase Storage/CDN から必要に応じてダウンロードされ、完了後は端末にキャッシュされます。各レベルには少量のオフライン開始用素材を同梱します。これらの公開学習アセットには個人の学習履歴は含まれません。</li>
         </ul>
 
         <h2>4. アプリ権限の説明</h2>
         <ul>
-          <li><strong>インターネットアクセス (INTERNET)：</strong>Google ログイン、同期処理、報告・サポートデータ送信、外部辞書 API 照会、高品質 WebP 学習画像のダウンロードに必要です。</li>
+          <li><strong>インターネットアクセス (INTERNET)：</strong>Google ログイン、同期処理、報告・サポートデータ送信、外部辞書 API 照会、承認済みカード画像・音声のダウンロードに必要です。広告版候補では広告と集計測定にも使用します。</li>
           <li><strong>バイブレーション制御 (VIBRATE)：</strong>カードの評価時、学習体験向上のための心地よい触覚フィードバックを提供します。</li>
           <li><strong>通知権限 (POST_NOTIFICATIONS)：</strong>ユーザーが有効にしたローカル学習リマインダーにのみ使用します。</li>
           <li><strong>起動完了イベント (RECEIVE_BOOT_COMPLETED)：</strong>端末再起動またはアプリ更新後、有効なローカル学習リマインダーを再設定するためにのみ使用します。</li>
@@ -389,7 +398,10 @@
         <h2>5. データの削除</h2>
         <p>アプリの「アカウント削除」ボタン、または <a href="../account-deletion/">アカウント削除申請ページ</a> から手続きを行えます。アプリは Cloud Firestore の学習進度と統計、アカウントのパスに保存された旧版の報告スクリーンショット添付、端末の SQLite 学習データ、高品質画像キャッシュを削除し、LexiTale の Firebase Authentication ログインアカウントの削除を試みます。旧版の生の報告は一度限りの匿名化処理で連絡先、添付参照、カード全体のスナップショットを除去し、その後管理者が元の文書を削除します。長期保持する匿名化フィードバックにはアカウント識別子がなく、製品・コンテンツ修正の証拠として保持される場合があります。Firebase が最近のログインを要求する場合、またはアプリ内でログインアカウント削除を完了できない場合でも、公開削除ページまたはサポートメールからアカウントと関連クラウドデータの削除を申請できます。</p>
 
-        <h2>6. お問い合わせ</h2>
+        <h2>6. 広告版候補のデータ処理（未公開）</h2>
+        <p>後続の広告版では Google Mobile Ads を使用し、リワード広告と低頻度のインタースティシャル広告を表示します。SDK は IP から推定した大まかな位置、アプリ操作、診断情報、端末識別子を広告、分析、不正防止、安全、法令遵守のために処理する場合があります。アプリは UMP で必要な同意を管理し、必要な場合は広告のプライバシー設定を提供します。Firebase Analytics は集計した学習フローと広告結果のみを記録し、Firebase UID、氏名、メール、カード本文、自由入力は送信しません。</p>
+
+        <h2>7. お問い合わせ</h2>
         <p>プライバシーポリシーに関するご質問は、以下のアドレスまでご連絡ください：<a href="mailto:lexitale.support@gmail.com">lexitale.support@gmail.com</a></p>
       </div>
 
@@ -412,19 +424,19 @@
           <li>사용자의 학습 데이터는 단어 카드 학습 최적화(FSRS), 북마크, 학습 통계 및 안전한 클라우드 진도 복원 기능에만 제한적으로 사용됩니다.</li>
           <li>당사는 사용자의 어떠한 데이터도 판매하지 않으며, 학습 이력을 타겟 광고 등에 활용하지 않습니다.</li>
           <li>비식별 피드백은 콘텐츠 또는 제품 문제를 찾고 우선순위를 정해 수정하는 데만 사용합니다.</li>
-          <li>현재 MVP 버전은 광고 서빙이나 결제 데이터를 처리하지 않습니다. 향후 과금 기능 도입 시 본 정책을 갱신합니다.</li>
+          <li>현재 배포 중인 3.0.43+346은 제3자 광고를 제공하거나 결제 데이터를 처리하지 않습니다. 광고 버전 후보의 데이터 처리는 아래에 설명합니다.</li>
         </ul>
 
         <h2>3. 정보 보호</h2>
         <ul>
           <li>기기 내부의 데이터는 앱 전용 SQLite 샌드박스로 격리되어 안전하게 보호됩니다.</li>
           <li>클라우드와의 모든 통신은 보안 암호화되며, Firestore 보안 규칙에 의거하여 승인된 UID 본인만 데이터에 액세스할 수 있습니다.</li>
-          <li>고화질 단어 카드 이미지는 Firebase CDN을 통해 로드될 수 있습니다. MVP 오디오 자산은 현재 앱 설치 패키지에 포함되거나 로컬 캐시로 확인되며 Firebase 오디오 CDN에서 다운로드되지 않습니다. 이러한 공개 학습 자산에는 개인 학습 기록이 포함되지 않습니다.</li>
+          <li>승인된 표준 카드 이미지와 오디오는 Firebase Storage/CDN에서 필요할 때 다운로드되며 완료 후 로컬에 캐시됩니다. 각 수준에는 소량의 오프라인 시작용 미디어가 포함됩니다. 이러한 공개 학습 자산에는 개인 학습 기록이 포함되지 않습니다.</li>
         </ul>
 
         <h2>4. 권한 설명</h2>
         <ul>
-          <li><strong>네트워크 액세스 (INTERNET):</strong> Google 로그인, 클라우드 동기화, 신고/지원 데이터 전송, 외부 사전 API 조회, 고화질 WebP 학습 이미지 다운로드에 사용됩니다.</li>
+          <li><strong>네트워크 액세스 (INTERNET):</strong> Google 로그인, 클라우드 동기화, 신고/지원 데이터 전송, 외부 사전 API 조회, 승인된 카드 이미지와 오디오 다운로드에 사용됩니다. 광고 버전 후보에서는 광고와 집계 측정에도 사용됩니다.</li>
           <li><strong>진동 제어 (VIBRATE):</strong> 카드 평가 시 부드러운 햅틱 진동 피드백을 제공하여 학습 경험을 향상시킵니다.</li>
           <li><strong>알림 권한 (POST_NOTIFICATIONS):</strong> 사용자가 켠 로컬 학습 알림에만 사용됩니다.</li>
           <li><strong>부팅 완료 이벤트 (RECEIVE_BOOT_COMPLETED):</strong> 기기 재시작 또는 앱 업데이트 후 켜져 있는 로컬 학습 알림을 다시 예약하는 데만 사용됩니다.</li>
@@ -433,7 +445,10 @@
         <h2>5. 데이터 삭제</h2>
         <p>앱 내 설정 메뉴의 "회원탈퇴"를 선택하거나 외부 <a href="../account-deletion/">회원탈퇴 신청 페이지</a>를 통해 언제든지 요청할 수 있습니다. 앱은 Cloud Firestore 학습 기록과 통계, 계정 경로에 저장된 이전 버전 신고 스크린샷 첨부, 기기의 SQLite 학습 데이터 및 고화질 이미지 캐시를 삭제하고 LexiTale Firebase Authentication 로그인 계정 삭제를 시도합니다. 이전 버전의 원본 신고는 일회성 비식별화 과정에서 연락처, 첨부 참조, 전체 카드 스냅샷을 제거한 뒤 관리자가 원본 문서를 삭제합니다. 장기 보관되는 비식별 피드백에는 계정 식별자가 없으므로 제품 및 콘텐츠 수정 근거로 보관될 수 있습니다. Firebase가 최근 로그인을 요구하거나 앱에서 로그인 계정 삭제를 완료할 수 없는 경우에도 공개 삭제 페이지 또는 지원 이메일을 통해 계정과 관련 클라우드 데이터 삭제를 요청할 수 있습니다.</p>
 
-        <h2>6. 문의하기</h2>
+        <h2>6. 광고 버전 후보의 데이터 처리(아직 출시되지 않음)</h2>
+        <p>후속 광고 버전은 Google Mobile Ads로 보상형 광고와 저빈도 전면 광고를 표시합니다. SDK는 IP로 추정한 대략적인 위치, 앱 상호작용, 진단 정보, 기기 식별자를 광고, 분석, 부정 방지, 보안 및 법적 준수에 사용할 수 있습니다. 앱은 UMP로 필요한 동의를 관리하고 필요할 때 광고 개인정보 보호 옵션을 제공합니다. Firebase Analytics는 집계된 학습 흐름과 광고 결과만 기록하며 Firebase UID, 이름, 이메일, 카드 본문 또는 자유 입력은 전송하지 않습니다.</p>
+
+        <h2>7. 문의하기</h2>
         <p>본 방침에 대한 문의사항이나 의견은 다음 메일로 보내주시기 바랍니다: <a href="mailto:lexitale.support@gmail.com">lexitale.support@gmail.com</a></p>
       </div>
     </article>
