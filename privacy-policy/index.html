@@ -227,6 +227,7 @@
           <li><strong>雲端同步資料：</strong>為防範資料丟失並提供進度保存，登入後您的學習進度會透過 Cloud Firestore 雲端資料庫保存。</li>
           <li><strong>去識別化意見資料：</strong>若您使用 App 內回報功能，我們會保存回報類型、選填說明、必要的字卡 ID／內容包／排序參照，以及 App 版本、裝置型號與作業系統、語言、登入狀態和畫面位置等診斷資訊。回報不儲存 Firebase UID、姓名、信箱、截圖或整張字卡內容快照；疑似信箱與電話號碼會自動遮蔽。請勿在自由文字填入個人資料。</li>
           <li><strong>外部字典查詢：</strong>當您新增自訂單字時，App 會透過 API 檢索字典釋義，不包含個人可識別資訊。</li>
+          <li><strong>字庫改善選項：</strong>App 可先在帳號範圍的本機 SQLite 辨識總表未收錄的有效自訂單字。未同意前只保存在這台裝置，不會建立上傳佇列或傳送。App 會在累積數個候選時顯示有限次數的情境邀請，設定頁也可隨時查看完整說明。只有您明確同意後，目前本機候選與之後新增、且各自已儲存滿 30 天的候選才可傳送。資料只含正規化單字、粗粒度詞性、字典是否查到、字庫版本與月份，不含 Firebase UID、姓名、信箱、翻譯、定義、例句、學習紀錄或精確時間。關閉或第二次拒絕會清除尚未送出的本機候選與上傳佇列，並停止後續本機候選辨識，直到您從設定重新明確開啟。已跨使用者彙總且不帶個人索引的統計無法個別刪除。</li>
         </ul>
 
         <h2>2. 資料使用</h2>
@@ -275,6 +276,7 @@
           <li><strong>云端同步数据：</strong>为防范数据丢失并提供进度保存，登录后您的学习进度会通过 Cloud Firestore 云端数据库保存。</li>
           <li><strong>去标识化意见数据：</strong>若您使用 App 内反馈功能，我们会保存反馈类型、选填说明、必要的单词卡 ID／内容包／排序参照，以及 App 版本、设备型号与系统、语言、登录状态和画面位置等诊断信息。反馈不保存 Firebase UID、姓名、邮箱、截图或整张单词卡内容快照；疑似邮箱与电话号码会自动遮蔽。请勿在自由文字中填写个人信息。</li>
           <li><strong>外部字典查询：</strong>当您新增自定义单词时，App 会通过 API 检索字典释义，不包含个人可识别信息。</li>
+          <li><strong>字库改善选项：</strong>App 可先在账号范围的本地 SQLite 识别总表未收录的有效自定义单词。未同意前只保存在这台设备，不会建立上传队列或发送。App 会在累积数个候选时显示有限次数的情境邀请，设置页也可随时查看完整说明。只有您明确同意后，当前本地候选与之后新增、且各自已保存满 30 天的候选才可发送。数据只含规范化单词、粗粒度词性、词典是否查到、词库版本和月份，不含 Firebase UID、姓名、邮箱、翻译、定义、例句、学习记录或精确时间。关闭或第二次拒绝会清除尚未发送的本地候选与上传队列，并停止后续本地候选识别，直到您从设置重新明确开启。已跨用户汇总且不含个人索引的统计无法单独删除。</li>
         </ul>
 
         <h2>2. 数据使用</h2>
@@ -323,6 +325,7 @@
           <li><strong>Cloud Synchronization:</strong> To prevent data loss, your progress is backed up securely in our Cloud Firestore database.</li>
           <li><strong>Deidentified Feedback:</strong> In-app feedback stores its type, optional details, the necessary card ID/pack/rank reference, and diagnostics such as App version, device model and OS, language, sign-in state, and screen location. It does not store a Firebase UID, name, email, screenshot, or full card-content snapshot. Likely email addresses and phone numbers are automatically redacted. Do not enter personal information in free text.</li>
           <li><strong>Dictionary Services:</strong> Adding custom words queries third-party dictionary APIs for definitions. No personally identifiable data is sent.</li>
+          <li><strong>Vocabulary improvement option:</strong> The App may first identify eligible custom words missing from the bundled lexicon in account-scoped local SQLite. Before you agree, candidates remain only on this device and no upload queue is created or transmitted. The App may show a limited number of contextual invitations after several candidates accumulate, and the full notice remains available in Settings. Only after your explicit agreement may current on-device candidates and future candidates be sent once each has been saved for 30 days. It sends only the normalized word, coarse POS, dictionary-hit status, lexicon version, and month—not a Firebase UID, name, email, translation, definition, example, learning history, or exact time. Turning it off or declining the second invitation clears unsent local candidates and the upload queue, and stops future local candidate detection until you explicitly enable it from Settings. Cross-user aggregate statistics have no personal index and cannot be individually deleted.</li>
         </ul>
 
         <h2>2. Data Usage</h2>
@@ -370,6 +373,7 @@
           <li><strong>ログイン情報：</strong>アプリは Google ログインを使用し、Firebase Authentication を介してユーザーを識別し、基本プロファイル（メールアドレス、表示名）を取得します。</li>
           <li><strong>クラウド同期データ：</strong>データの紛失を防ぐため、ログイン後は Cloud Firestore に学習履歴が自動的にバックアップされます。</li>
           <li><strong>匿名化フィードバック：</strong>アプリ内フィードバックには、種類、任意の説明、必要なカード ID／パック／順位参照、アプリのバージョン、端末モデルと OS、言語、ログイン状態、画面位置などの診断情報を保存します。Firebase UID、氏名、メール、スクリーンショット、カード内容全体のスナップショットは保存しません。メールアドレスや電話番号らしい文字列は自動で伏せ字にします。自由記述に個人情報を入力しないでください。</li>
+          <li><strong>語彙改善オプション：</strong>アプリは、収録語彙にない有効なカスタム単語を、アカウント単位のローカル SQLite で先に検出できます。同意するまでは候補をこの端末にのみ保存し、アップロード用キューの作成や送信は行いません。候補がいくつか蓄積した時点で回数を限定した案内を表示する場合があり、設定画面でも常に詳細を確認できます。明示的に同意した後に限り、現在の端末内候補と今後の候補を、それぞれ保存から30日後に送信できます。送信するのは正規化した単語、粗い品詞区分、辞書検索結果、語彙版、月のみで、Firebase UID、氏名、メール、翻訳、定義、例文、学習履歴、正確な時刻は含みません。無効化または2回目の案内で拒否すると、未送信の端末内候補とアップロード用キューが削除され、設定から改めて明示的に有効化するまで端末内候補の検出も停止します。個人索引を持たないユーザー横断の集計統計は個別削除できません。</li>
         </ul>
 
         <h2>2. 情報の使用</h2>
@@ -417,6 +421,7 @@
           <li><strong>로그인 정보:</strong> 앱은 Google 로그인을 사용하며, Firebase Authentication을 통해 사용자를 식별하고 이메일이나 표시 이름과 같은 기본 프로필 정보를 수집합니다.</li>
           <li><strong>클라우드 동기화 데이터:</strong> 데이터 손실을 방지하고 복원 기능을 제공하기 위해, 로그인 후 학습 기록이 Cloud Firestore 클라우드 데이터베이스에 보관됩니다.</li>
           <li><strong>비식별 피드백:</strong> 앱 내 피드백에는 유형, 선택 설명, 필요한 카드 ID／팩／순위 참조, 앱 버전, 기기 모델과 OS, 언어, 로그인 상태, 화면 위치 등의 진단 정보를 저장합니다. Firebase UID, 이름, 이메일, 스크린샷 또는 전체 카드 내용 스냅샷은 저장하지 않습니다. 이메일 주소나 전화번호로 보이는 문자열은 자동으로 가립니다. 자유 입력란에 개인정보를 넣지 마세요.</li>
+          <li><strong>어휘 개선 옵션:</strong> 앱은 기본 어휘 목록에 없는 유효한 사용자 정의 단어를 계정 범위의 로컬 SQLite에서 먼저 감지할 수 있습니다. 동의하기 전에는 후보를 이 기기에만 저장하며 업로드 대기열을 만들거나 전송하지 않습니다. 후보가 몇 개 쌓이면 횟수가 제한된 상황별 안내를 표시할 수 있고 설정에서도 언제든 전체 설명을 볼 수 있습니다. 명시적으로 동의한 후에만 현재 기기 내 후보와 이후 후보를 각각 저장 30일 후 전송할 수 있습니다. 정규화한 단어, 대략적인 품사, 사전 검색 여부, 어휘 버전, 월만 전송하며 Firebase UID, 이름, 이메일, 번역, 정의, 예문, 학습 기록, 정확한 시간은 포함하지 않습니다. 기능을 끄거나 두 번째 안내에서 거부하면 전송되지 않은 기기 내 후보와 업로드 대기열이 삭제되고, 설정에서 다시 명시적으로 켤 때까지 기기 내 후보 감지도 중지됩니다. 개인 인덱스가 없는 사용자 간 집계 통계는 개별 삭제할 수 없습니다.</li>
         </ul>
 
         <h2>2. 정보 사용</h2>
