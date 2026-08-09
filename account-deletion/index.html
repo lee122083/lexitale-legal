@@ -234,7 +234,7 @@
       <!-- Traditional Chinese (ZH) -->
       <div class="lang-section" id="sec-zh">
         <h1 id="title-zh">LexiTale 帳號刪除申請</h1>
-        <p class="meta">最後更新日期：2026 年 7 月 13 日</p>
+        <p class="meta">最後更新日期：2026 年 8 月 9 日</p>
         <p>您可以在 LexiTale App 的設定頁直接選擇「刪除帳號」。若您已無法使用 App，也可以透過本頁提出刪除申請。</p>
 
         <h2>App 內刪除方式</h2>
@@ -256,6 +256,8 @@
         <ul>
           <li>Firebase Authentication 中的 LexiTale 登入帳號。</li>
           <li>與該帳號綁定的 Cloud Firestore 學習進度與統計資料。</li>
+          <li>Firebase UID 對應的付費權益，並解除購買雜湊紀錄與舊 UID 的連結。</li>
+          <li>為恢復一次買斷與防權杖重放，會保留不可逆的購買權杖雜湊、Google 登入提供者雜湊與必要商品狀態；不保留原始購買權杖。</li>
           <li>儲存在手機本機的學習進度（SQLite）與下載的高品質情境圖片檔快取。</li>
           <li>舊版回報截圖附件會在 App 內刪帳時一併刪除。</li>
           <li><em>註：新版去識別化意見不保存 Firebase UID、姓名、信箱或截圖，無法連回特定帳號，可能保留作為產品與內容修正證據。</em></li>
@@ -271,7 +273,7 @@
       <!-- Simplified Chinese (ZH-CN) -->
       <div class="lang-section" id="sec-zh-cn" style="display: none;">
         <h1 id="title-zh-cn">LexiTale 账号删除申请</h1>
-        <p class="meta">最后更新日期：2026 年 7 月 13 日</p>
+        <p class="meta">最后更新日期：2026 年 8 月 9 日</p>
         <p>您可以在 LexiTale App 的设置页直接选择「删除账号」。若您已无法使用 App，也可以通过本页提出删除申请。</p>
 
         <h2>App 内删除方式</h2>
@@ -293,6 +295,8 @@
         <ul>
           <li>Firebase Authentication 中的 LexiTale 登录账号。</li>
           <li>与该账号绑定的 Cloud Firestore 学习进度与统计数据。</li>
+          <li>Firebase UID 对应的付费权益，并解除购买哈希记录与旧 UID 的关联。</li>
+          <li>为恢复一次性购买并防止令牌重放，会保留不可逆的购买令牌哈希、Google 登录提供者哈希与必要商品状态；不保留原始购买令牌。</li>
           <li>储存在手机本机的学习进度（SQLite）与下载的高品质情境图片档缓存。</li>
           <li>旧版反馈截图附件会在 App 内删除账号时一并删除。</li>
           <li><em>注：新版去标识化意见不保存 Firebase UID、姓名、邮箱或截图，无法关联特定账号，可能保留作为产品与内容修正证据。</em></li>
@@ -308,7 +312,7 @@
       <!-- English (EN) -->
       <div class="lang-section" id="sec-en" style="display: none;">
         <h1 id="title-en">LexiTale Account Deletion</h1>
-        <p class="meta">Last Updated: July 13, 2026</p>
+        <p class="meta">Last Updated: August 9, 2026</p>
         <p>You can choose "Delete Account" directly on the settings page of the LexiTale App. If you can no longer use the App, you can request deletion through this page.</p>
 
         <h2>How to Delete in the App</h2>
@@ -330,6 +334,8 @@
         <ul>
           <li>Your LexiTale login account in Firebase Authentication.</li>
           <li>Associated learning progress and statistics in Cloud Firestore.</li>
+          <li>The paid entitlement for the Firebase UID is deleted, and the old UID is unlinked from the hashed purchase record.</li>
+          <li>Irreversible purchase-token and Google sign-in provider hashes plus necessary product state are retained for lifetime-purchase restoration and token-replay prevention; the raw purchase token is not retained.</li>
           <li>Local learning progress (SQLite) and downloaded high-quality scenario WebP images cached on your mobile device.</li>
           <li>Legacy report screenshot attachments are deleted during in-app account deletion.</li>
           <li><em>Note: New deidentified feedback does not store a Firebase UID, name, email, or screenshot. It cannot be linked to a specific account and may be retained as evidence for product and content fixes.</em></li>
@@ -345,7 +351,7 @@
       <!-- Japanese (JA) -->
       <div class="lang-section" id="sec-ja" style="display: none;">
         <h1 id="title-ja">LexiTale アカウント削除申請</h1>
-        <p class="meta">最終更新日：2026年7月13日</p>
+        <p class="meta">最終更新日：2026年8月9日</p>
         <p>アカウントの削除は、LexiTale アプリ内の設定ページから直接行えます。アプリをご利用いただけない場合は、このページから削除を申請することも可能です。</p>
 
         <h2>アプリ内での削除手順</h2>
@@ -367,6 +373,8 @@
         <ul>
           <li>Firebase Authentication 内の LexiTale ログインアカウント。</li>
           <li>アカウントに関連付けられた Cloud Firestore の学習進度および統計データ。</li>
+          <li>Firebase UID の有料権利を削除し、購入ハッシュ記録と旧 UID の関連付けを解除します。</li>
+          <li>買い切り購入の復元とトークン再利用防止のため、購入トークンと Google ログインプロバイダの不可逆ハッシュ、および必要な商品状態を保持します。生の購入トークンは保持しません。</li>
           <li>スマートフォン端末に保存された学習履歴（SQLite）およびダウンロードされた高品質シーン WebP 画像キャッシュ。</li>
           <li>旧版の報告スクリーンショット添付は、アプリ内でのアカウント削除時に削除されます。</li>
           <li><em>注：新版の匿名化フィードバックは Firebase UID、氏名、メール、スクリーンショットを保存しません。特定のアカウントには関連付けられず、製品・コンテンツ修正の証拠として保持される場合があります。</em></li>
@@ -382,7 +390,7 @@
       <!-- Korean (KO) -->
       <div class="lang-section" id="sec-ko" style="display: none;">
         <h1 id="title-ko">LexiTale 계정 회원탈퇴 신청</h1>
-        <p class="meta">최종 업데이트: 2026년 7월 13일</p>
+        <p class="meta">최종 업데이트: 2026년 8월 9일</p>
         <p>LexiTale 앱의 설정 페이지에서 직접 "회원탈퇴"를 진행할 수 있습니다. 앱을 사용하실 수 없는 경우, 이 페이지를 통해 회원탈퇴 신청을 하실 수 있습니다.</p>
 
         <h2>앱 내 회원탈퇴 방법</h2>
@@ -404,6 +412,8 @@
         <ul>
           <li>Firebase Authentication 내의 LexiTale 로그인 계정.</li>
           <li>해당 계정과 연동된 Cloud Firestore 학습 기록 및 통계 데이터.</li>
+          <li>Firebase UID의 유료 권한을 삭제하고 구매 해시 기록과 이전 UID의 연결을 해제합니다.</li>
+          <li>일회성 구매 복원과 토큰 재사용 방지를 위해 구매 토큰 및 Google 로그인 제공자의 비가역 해시와 필요한 상품 상태를 보관하며 원본 구매 토큰은 보관하지 않습니다.</li>
           <li>스마트폰 기기 로컬에 저장된 학습 진도(SQLite) 및 다운로드된 고화질 상황 WebP 이미지 캐시.</li>
           <li>이전 버전의 신고 스크린샷 첨부 파일은 앱 내 계정 삭제 시 함께 삭제됩니다.</li>
           <li><em>참고: 새 비식별 피드백은 Firebase UID, 이름, 이메일 또는 스크린샷을 저장하지 않습니다. 특정 계정에 연결되지 않으며 제품 및 콘텐츠 수정 근거로 보관될 수 있습니다.</em></li>
