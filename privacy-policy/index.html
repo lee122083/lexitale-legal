@@ -217,7 +217,7 @@
       <!-- Traditional Chinese (ZH) -->
       <div class="lang-section" id="sec-zh">
         <h1 id="title-zh">LexiTale 隱私權政策</h1>
-        <p class="meta">生效日期：2026 年 8 月 9 日</p>
+        <p class="meta">生效日期：2026 年 8 月 30 日</p>
         <p>LexiTale（以下稱「我們」）致力於保護您的隱私。本隱私權政策說明 LexiTale Android App 如何收集、使用、同步及保護您的資訊。</p>
 
         <h2>1. 資料收集</h2>
@@ -235,7 +235,7 @@
           <li>您的學習資料僅用於提供核心單字記憶複習、自適應排程、進度統計與雲端還原同步。</li>
           <li>我們不出售任何使用者資料，也不會將您的學習歷史用於任何商業廣告追蹤。</li>
           <li>去識別化意見資料僅用於找出、排序與修正內容或產品問題。</li>
-          <li>目前 Production 3.0.44+347 包含廣告與彙總量測；內部測試候選 3.0.46+349 的一次買斷驗證另列於下方，尚未進 Production。</li>
+          <li>目前正式版包含廣告、彙總量測、一次買斷驗證與會員方案互動；相關資料處理方式列於下方。</li>
         </ul>
 
         <h2>3. 資料保護</h2>
@@ -257,13 +257,13 @@
         <p>您可以在 App 的設定頁直接選擇「刪除帳號」，或使用公開的 <a href="../account-deletion/">帳號刪除說明網頁</a> 送出申請。App 會刪除 Cloud Firestore 中的雲端學習進度與統計資料、舊版以帳號路徑保存的回報截圖附件、裝置本機 SQLite 學習資料與高品質圖片快取，並嘗試刪除 LexiTale 的 Firebase Authentication 登入帳號。舊版原始回報會完成一次性去識別化並刪除聯絡資料、附件參照與完整字卡快照；原始文件之後由管理端刪除。長期保留的去識別化意見紀錄不含帳號識別碼，可能作為產品與內容修正證據。若 Firebase 要求近期登入或 App 無法完成登入帳號刪除，您仍可透過公開帳號刪除頁或客服信箱要求我們完成帳號與相關雲端資料刪除。</p>
         <p>刪除帳號也會刪除 Firebase UID 對應的付費權益，並解除購買雜湊紀錄與舊 UID 的連結。為讓同一 Google 身分恢復一次買斷及防止權杖重放，後端會保留不可逆的購買權杖雜湊、Google 登入提供者雜湊與必要商品狀態；不保存原始購買權杖。</p>
 
-        <h2>6. 廣告與彙總量測（Production 347）</h2>
-        <p>Production 347 使用 Google Mobile Ads 顯示低頻標準插頁廣告；免費使用者只會在完成 25 張不重複字卡且仍有下一節時看到廣告。SDK 可能處理由 IP 推估的大致位置、App 互動、診斷與裝置識別，用於廣告、分析、防詐、安全與法遵。App 使用 UMP 處理適用的同意，並在需要時提供廣告隱私選項。Firebase Analytics 僅記錄彙總學習流程與廣告結果，不傳送 Firebase UID、姓名、信箱、字卡文字或自由輸入。</p>
+        <h2>6. 廣告與彙總量測</h2>
+        <p>目前正式版使用 Google Mobile Ads 顯示低頻標準插頁廣告；免費使用者只會在完成 25 張不重複字卡且仍有下一節時看到廣告。SDK 可能處理由 IP 推估的大致位置、App 互動、診斷與裝置識別，用於廣告、分析、防詐、安全與法遵。App 使用 UMP 處理適用的同意，並在需要時提供廣告隱私選項。Firebase Analytics 僅記錄彙總學習流程與廣告結果，不傳送 Firebase UID、姓名、信箱、字卡文字或自由輸入。</p>
 
-        <h2>7. 一次買斷內部測試候選（349；尚未進 Production）</h2>
+        <h2>7. 一次買斷與會員方案 Analytics</h2>
         <p>Google Play 處理商品價格、適用稅額、付款方式與退款；LexiTale 不接收完整付款卡號或銀行資料。App 只傳送固定商品 ID、不透明購買權杖與 Firebase 登入驗證；Cloud Functions 向 Google Play 驗證並確認購買，僅保存帳號權益、購買權杖的單向雜湊與退款／撤銷狀態，不保存原始權杖。待處理、取消、退款或撤銷不授予或會停止升級權益，免費內容與學習進度仍保留。退款或撤權後，App 不再下載或選用既有高品質圖片快取，但不在背景刪檔；刪除帳號、清除 App 資料或解除安裝可移除本機快取。</p>
         <p>Play 即時開發人員通知的去重收據只保留 90 天，並以 Firestore TTL 到期刪除。</p>
-        <p>下一個 post-349 候選才會以 Firebase Analytics 記錄彙總的會員方案互動與購買階段結果；事件只含搶先／正式階段、商店狀態與結果，不含 Firebase UID、姓名、信箱、商品價格、購買權杖或自由輸入。</p>
+        <p>目前正式版以 Firebase Analytics 記錄彙總的會員方案互動與購買階段結果；事件只含搶先／正式階段、商店狀態與結果，不含 Firebase UID、姓名、信箱、商品價格、購買權杖或自由輸入。</p>
 
         <h2>8. 聯絡我們</h2>
         <p>若對本隱私政策有任何意見或疑問，請發送郵件至：<a href="mailto:lexitale.support@gmail.com">lexitale.support@gmail.com</a></p>
@@ -272,7 +272,7 @@
       <!-- Simplified Chinese (ZH-CN) -->
       <div class="lang-section" id="sec-zh-cn" style="display: none;">
         <h1 id="title-zh-cn">LexiTale 隐私权政策</h1>
-        <p class="meta">生效日期：2026 年 8 月 9 日</p>
+        <p class="meta">生效日期：2026 年 8 月 30 日</p>
         <p>LexiTale（以下称「我们」）致力于保护您的隐私。本隐私权政策说明 LexiTale Android App 如何收集、使用、同步及保护您的信息。</p>
 
         <h2>1. 数据收集</h2>
@@ -290,7 +290,7 @@
           <li>您的学习数据仅用于提供核心单词记忆复习、自适应排程、进度统计与云端还原同步。</li>
           <li>我们不出售任何用户数据，也不会将您的学习历史用于任何商业广告追踪。</li>
           <li>去标识化意见数据仅用于发现、排序与修正内容或产品问题。</li>
-          <li>目前 Production 3.0.44+347 包含广告与汇总分析；内部测试候选 3.0.46+349 的一次性购买验证另列于下方，尚未进入 Production。</li>
+          <li>当前正式版包含广告、汇总分析、一次性购买验证与会员方案互动；相关数据处理方式列于下方。</li>
         </ul>
 
         <h2>3. 数据保护</h2>
@@ -312,13 +312,13 @@
         <p>您可以在 App 的设置页直接选择「删除账号」，或使用公开的 <a href="../account-deletion/">账号删除说明网页</a> 送出申请。App 会删除 Cloud Firestore 中的云端学习进度与统计数据、旧版按账号路径保存的反馈截图附件、设备本机 SQLite 学习数据与高品质图片缓存，并尝试删除 LexiTale 的 Firebase Authentication 登录账号。旧版原始反馈会完成一次性去标识化，并移除联系资料、附件引用与完整单词卡快照；之后由管理员删除原始文档。长期保留的去标识化意见记录不含账号标识符，可能作为产品与内容修正证据。若 Firebase 要求近期登录或 App 无法完成登录账号删除，您仍可通过公开账号删除页或客服邮箱要求我们完成账号与相关云端数据删除。</p>
         <p>删除账号也会删除 Firebase UID 对应的付费权益，并解除购买哈希记录与旧 UID 的关联。为让同一 Google 身份恢复一次性购买并防止令牌重放，后端会保留不可逆的购买令牌哈希、Google 登录提供者哈希与必要商品状态；不保存原始购买令牌。</p>
 
-        <h2>6. 广告与汇总分析（Production 347）</h2>
-        <p>Production 347 使用 Google Mobile Ads 显示低频标准插页广告；免费用户只会在完成 25 张不重复单词卡且仍有下一节时看到广告。SDK 可能处理由 IP 推断的大致位置、App 互动、诊断和设备标识，用于广告、分析、防欺诈、安全与合规。App 使用 UMP 处理适用的同意，并在需要时提供广告隐私选项。Firebase Analytics 只记录汇总学习流程和广告结果，不传送 Firebase UID、姓名、邮箱、单词卡文字或自由输入。</p>
+        <h2>6. 广告与汇总分析</h2>
+        <p>当前正式版使用 Google Mobile Ads 显示低频标准插页广告；免费用户只会在完成 25 张不重复单词卡且仍有下一节时看到广告。SDK 可能处理由 IP 推断的大致位置、App 互动、诊断和设备标识，用于广告、分析、防欺诈、安全与合规。App 使用 UMP 处理适用的同意，并在需要时提供广告隐私选项。Firebase Analytics 只记录汇总学习流程和广告结果，不传送 Firebase UID、姓名、邮箱、单词卡文字或自由输入。</p>
 
-        <h2>7. 一次性购买内部测试候选（349；尚未进入 Production）</h2>
+        <h2>7. 一次性购买与会员方案 Analytics</h2>
         <p>Google Play 处理商品价格、适用税额、付款方式与退款；LexiTale 不接收完整付款卡号或银行资料。App 只传送固定商品 ID、不透明购买令牌与 Firebase 登录验证；Cloud Functions 向 Google Play 验证并确认购买，只保存账号权益、购买令牌的单向哈希与退款／撤销状态，不保存原始令牌。待处理、取消、退款或撤销不会授予或会停止升级权益，免费内容与学习进度仍保留。退款或撤权后，App 不再下载或选用既有高品质图片缓存，但不会在后台删除文件；删除账号、清除 App 数据或卸载可移除本机缓存。</p>
         <p>Play 实时开发者通知的去重收据只保留 90 天，并通过 Firestore TTL 到期删除。</p>
-        <p>下一个 post-349 候选才会通过 Firebase Analytics 记录汇总的会员方案互动和购买阶段结果；事件只包含抢先／正式阶段、商店状态和结果，不包含 Firebase UID、姓名、邮箱、商品价格、购买令牌或自由输入。</p>
+        <p>当前正式版通过 Firebase Analytics 记录汇总的会员方案互动和购买阶段结果；事件只包含抢先／正式阶段、商店状态和结果，不包含 Firebase UID、姓名、邮箱、商品价格、购买令牌或自由输入。</p>
 
         <h2>8. 联系我们</h2>
         <p>若对本隐私政策有任何意见或疑问，请发送邮件至：<a href="mailto:lexitale.support@gmail.com">lexitale.support@gmail.com</a></p>
@@ -327,7 +327,7 @@
       <!-- English (EN) -->
       <div class="lang-section" id="sec-en" style="display: none;">
         <h1 id="title-en">LexiTale Privacy Policy</h1>
-        <p class="meta">Effective Date: August 9, 2026</p>
+        <p class="meta">Effective Date: August 30, 2026</p>
         <p>LexiTale ("we", "us", or "our") is dedicated to protecting your privacy. This policy describes how the LexiTale Android App collects, uses, syncs, and protects your information.</p>
 
         <h2>1. Data Collection</h2>
@@ -345,7 +345,7 @@
           <li>Your learning progress is strictly used to deliver card scheduling (FSRS), bookmarks, learning stats, and secure cloud sync/restoration.</li>
           <li>We never sell your data, nor do we track your learning history for targeted commercial advertising.</li>
           <li>Deidentified feedback is used only to find, prioritize, and fix content or product issues.</li>
-          <li>Production 3.0.44+347 includes advertising and aggregate measurement. The one-time purchase verification in internal-testing candidate 3.0.46+349 is described below and is not in Production.</li>
+          <li>The current production release includes advertising, aggregate measurement, one-time purchase verification, and membership-plan interactions; the related data processing is described below.</li>
         </ul>
 
         <h2>3. Data Security</h2>
@@ -367,13 +367,13 @@
         <p>You can select "Delete Account" in the App Settings sheet or submit a request on our <a href="../account-deletion/">Account Deletion Web Page</a>. The App deletes your Cloud Firestore learning progress and statistics, legacy report screenshot attachments stored under the account path, local SQLite learning data, and high-quality image caches, and attempts to delete your LexiTale Firebase Authentication login account. Legacy raw reports undergo a one-time deidentification that removes contact data, attachment references, and full card snapshots; administrators then delete the raw documents. Long-term deidentified feedback has no account identifier and may be retained as evidence for product and content fixes. If Firebase requires recent sign-in or the App cannot complete login-account deletion, you can still use the public deletion page or support email to request deletion of the account and associated cloud data.</p>
         <p>Account deletion also removes the paid entitlement for the Firebase UID and unlinks that old UID from the hashed purchase record. To restore a lifetime purchase for the same Google identity and prevent token replay, the backend retains irreversible hashes of the purchase token and Google sign-in provider plus necessary product state; it does not retain the raw purchase token.</p>
 
-        <h2>6. Advertising and aggregate measurement (Production 347)</h2>
-        <p>Production 347 uses Google Mobile Ads for low-frequency standard interstitial ads. Free users see an ad only after completing 25 unique cards when another section remains. The SDK may process approximate location inferred from IP, App interactions, diagnostics, and device identifiers for advertising, analytics, fraud prevention, security, and compliance. The App uses UMP for applicable consent and provides ad privacy options when required. Firebase Analytics records only aggregate study-flow and ad outcomes; it does not send a Firebase UID, name, email, card text, or free-form input.</p>
+        <h2>6. Advertising and aggregate measurement</h2>
+        <p>The current production release uses Google Mobile Ads for low-frequency standard interstitial ads. Free users see an ad only after completing 25 unique cards when another section remains. The SDK may process approximate location inferred from IP, App interactions, diagnostics, and device identifiers for advertising, analytics, fraud prevention, security, and compliance. The App uses UMP for applicable consent and provides ad privacy options when required. Firebase Analytics records only aggregate study-flow and ad outcomes; it does not send a Firebase UID, name, email, card text, or free-form input.</p>
 
-        <h2>7. One-time purchase internal-testing candidate (349; not in Production)</h2>
+        <h2>7. One-time purchase and membership analytics</h2>
         <p>Google Play processes product pricing, applicable taxes, payment methods, and refunds; LexiTale does not receive full payment-card or bank details. The App sends only the fixed product ID, an opaque purchase token, and Firebase authentication. Cloud Functions verifies and acknowledges the purchase with Google Play and stores only the account entitlement, a one-way hash of the token, and refund or revocation state; it does not store the raw token. Pending, canceled, refunded, or revoked purchases do not grant or will stop upgraded access, while free content and learning progress remain available. After a refund or revocation, the App no longer downloads or selects existing high-quality image cache files, but does not delete them in the background; account deletion, clearing App data, or uninstalling removes the local cache.</p>
         <p>Google Play real-time developer-notification deduplication receipts are retained for 90 days and then deleted through Firestore TTL.</p>
-        <p>Only the next post-349 candidate will use Firebase Analytics for aggregate membership-plan interactions and purchase-stage outcomes. Events contain only the early-access or standard phase, store state, and outcome—not a Firebase UID, name, email, product price, purchase token, or free-form input.</p>
+        <p>The current production release uses Firebase Analytics for aggregate membership-plan interactions and purchase-stage outcomes. Events contain only the early-access or standard phase, store state, and outcome—not a Firebase UID, name, email, product price, purchase token, or free-form input.</p>
 
         <h2>8. Contact Us</h2>
         <p>If you have any questions or feedback regarding this policy, contact us at: <a href="mailto:lexitale.support@gmail.com">lexitale.support@gmail.com</a></p>
@@ -382,7 +382,7 @@
       <!-- Japanese (JA) -->
       <div class="lang-section" id="sec-ja" style="display: none;">
         <h1 id="title-ja">LexiTale プライバシーポリシー</h1>
-        <p class="meta">発効日：2026年8月9日</p>
+        <p class="meta">発効日：2026年8月30日</p>
         <p>LexiTale（以下「私たち」）は、ユーザーのプライバシーの保護に努めています。本ポリシーでは、LexiTale Android アプリがユーザーの情報をどのように収集、使用、同期、および保護するかについて説明します。</p>
 
         <h2>1. 情報の収集</h2>
@@ -399,7 +399,7 @@
           <li>学習データは、単語カードの復習スケジュール調整、学習統計、およびクラウド復元同期の提供のみに使用されます。</li>
           <li>私たちはユーザーデータを第三者に販売せず、学習履歴を広告ターゲティングに利用しません。</li>
           <li>匿名化フィードバックは、コンテンツまたは製品の問題の発見、優先順位付け、修正にのみ使用します。</li>
-          <li>現在の Production 3.0.44+347 には広告と集計測定が含まれます。内部テスト候補 3.0.46+349 の買い切り購入検証は下記に記載し、Production にはまだ含まれていません。</li>
+          <li>現在の正式版には広告、集計測定、買い切り購入の検証、会員プラン操作が含まれ、関連するデータ処理を下記に記載します。</li>
         </ul>
 
         <h2>3. 情報の保護</h2>
@@ -421,13 +421,13 @@
         <p>アプリの「アカウント削除」ボタン、または <a href="../account-deletion/">アカウント削除申請ページ</a> から手続きを行えます。アプリは Cloud Firestore の学習進度と統計、アカウントのパスに保存された旧版の報告スクリーンショット添付、端末の SQLite 学習データ、高品質画像キャッシュを削除し、LexiTale の Firebase Authentication ログインアカウントの削除を試みます。旧版の生の報告は一度限りの匿名化処理で連絡先、添付参照、カード全体のスナップショットを除去し、その後管理者が元の文書を削除します。長期保持する匿名化フィードバックにはアカウント識別子がなく、製品・コンテンツ修正の証拠として保持される場合があります。Firebase が最近のログインを要求する場合、またはアプリ内でログインアカウント削除を完了できない場合でも、公開削除ページまたはサポートメールからアカウントと関連クラウドデータの削除を申請できます。</p>
         <p>アカウント削除では Firebase UID の有料権利も削除し、購入ハッシュ記録と旧 UID の関連付けを解除します。同じ Google ID で買い切り購入を復元し、トークンの再利用を防ぐため、バックエンドは購入トークンと Google ログインプロバイダの不可逆ハッシュ、および必要な商品状態を保持します。生の購入トークンは保持しません。</p>
 
-        <h2>6. 広告と集計測定（Production 347）</h2>
-        <p>Production 347 では Google Mobile Ads の低頻度な標準インタースティシャル広告を表示します。無料ユーザーには、重複しないカードを25枚完了し、次のセクションがある場合にのみ広告が表示されます。SDK は IP から推定した大まかな位置、アプリ操作、診断情報、端末識別子を広告、分析、不正防止、安全、法令遵守のために処理する場合があります。アプリは UMP で必要な同意を管理し、必要な場合は広告のプライバシー設定を提供します。Firebase Analytics は集計した学習フローと広告結果のみを記録し、Firebase UID、氏名、メール、カード本文、自由入力は送信しません。</p>
+        <h2>6. 広告と集計測定</h2>
+        <p>現在の正式版では Google Mobile Ads の低頻度な標準インタースティシャル広告を表示します。無料ユーザーには、重複しないカードを25枚完了し、次のセクションがある場合にのみ広告が表示されます。SDK は IP から推定した大まかな位置、アプリ操作、診断情報、端末識別子を広告、分析、不正防止、安全、法令遵守のために処理する場合があります。アプリは UMP で必要な同意を管理し、必要な場合は広告のプライバシー設定を提供します。Firebase Analytics は集計した学習フローと広告結果のみを記録し、Firebase UID、氏名、メール、カード本文、自由入力は送信しません。</p>
 
-        <h2>7. 買い切り購入の内部テスト候補（349；Production 未導入）</h2>
+        <h2>7. 買い切り購入と会員プラン Analytics</h2>
         <p>商品価格、適用税、支払い方法、返金は Google Play が処理し、LexiTale は完全なカード番号や銀行情報を受け取りません。アプリは固定の商品 ID、不透明な購入トークン、Firebase 認証のみを送信します。Cloud Functions は Google Play で購入を検証・承認し、アカウントの権利、トークンの一方向ハッシュ、返金・取消状態のみを保存し、生のトークンは保存しません。保留、キャンセル、返金、取消ではアップグレード権利を付与しない、または停止しますが、無料コンテンツと学習進度は維持されます。返金・取消後は既存の高品質画像キャッシュを新たにダウンロードまたは選択しませんが、バックグラウンドでは削除しません。アカウント削除、アプリデータ消去、アンインストールでローカルキャッシュを削除できます。</p>
         <p>Google Play リアルタイム デベロッパー通知の重複排除レシートは 90 日間のみ保持し、Firestore TTL で期限後に削除します。</p>
-        <p>次の post-349 候補から Firebase Analytics に会員プラン操作と購入段階の結果を集計して記録します。イベントに含むのは先行／通常フェーズ、ストア状態、結果だけで、Firebase UID、氏名、メール、商品価格、購入トークン、自由入力は含みません。</p>
+        <p>現在の正式版では、Firebase Analytics に会員プラン操作と購入段階の結果を集計して記録します。イベントに含むのは先行／通常フェーズ、ストア状態、結果だけで、Firebase UID、氏名、メール、商品価格、購入トークン、自由入力は含みません。</p>
 
         <h2>8. お問い合わせ</h2>
         <p>プライバシーポリシーに関するご質問は、以下のアドレスまでご連絡ください：<a href="mailto:lexitale.support@gmail.com">lexitale.support@gmail.com</a></p>
@@ -436,7 +436,7 @@
       <!-- Korean (KO) -->
       <div class="lang-section" id="sec-ko" style="display: none;">
         <h1 id="title-ko">LexiTale 개인정보처리방침</h1>
-        <p class="meta">시행일자: 2026년 8월 9일</p>
+        <p class="meta">시행일자: 2026년 8월 30일</p>
         <p>LexiTale(이하 "당사")은 사용자의 개인정보 보호를 위해 최선을 다하고 있습니다. 본 개인정보처리방침은 LexiTale Android 앱이 어떻게 사용자의 정보를 수집, 사용, 동기화 및 보호하는지 설명합니다.</p>
 
         <h2>1. 정보 수집</h2>
@@ -453,7 +453,7 @@
           <li>사용자의 학습 데이터는 단어 카드 학습 최적화(FSRS), 북마크, 학습 통계 및 안전한 클라우드 진도 복원 기능에만 제한적으로 사용됩니다.</li>
           <li>당사는 사용자의 어떠한 데이터도 판매하지 않으며, 학습 이력을 타겟 광고 등에 활용하지 않습니다.</li>
           <li>비식별 피드백은 콘텐츠 또는 제품 문제를 찾고 우선순위를 정해 수정하는 데만 사용합니다.</li>
-          <li>현재 Production 3.0.44+347에는 광고와 집계 측정이 포함됩니다. 내부 테스트 후보 3.0.46+349의 일회성 구매 검증은 아래에 설명하며 아직 Production에는 포함되지 않았습니다.</li>
+          <li>현재 정식 버전에는 광고, 집계 측정, 일회성 구매 검증과 멤버십 플랜 상호작용이 포함되며 관련 데이터 처리는 아래에 설명합니다.</li>
         </ul>
 
         <h2>3. 정보 보호</h2>
@@ -475,13 +475,13 @@
         <p>앱 내 설정 메뉴의 "회원탈퇴"를 선택하거나 외부 <a href="../account-deletion/">회원탈퇴 신청 페이지</a>를 통해 언제든지 요청할 수 있습니다. 앱은 Cloud Firestore 학습 기록과 통계, 계정 경로에 저장된 이전 버전 신고 스크린샷 첨부, 기기의 SQLite 학습 데이터 및 고화질 이미지 캐시를 삭제하고 LexiTale Firebase Authentication 로그인 계정 삭제를 시도합니다. 이전 버전의 원본 신고는 일회성 비식별화 과정에서 연락처, 첨부 참조, 전체 카드 스냅샷을 제거한 뒤 관리자가 원본 문서를 삭제합니다. 장기 보관되는 비식별 피드백에는 계정 식별자가 없으므로 제품 및 콘텐츠 수정 근거로 보관될 수 있습니다. Firebase가 최근 로그인을 요구하거나 앱에서 로그인 계정 삭제를 완료할 수 없는 경우에도 공개 삭제 페이지 또는 지원 이메일을 통해 계정과 관련 클라우드 데이터 삭제를 요청할 수 있습니다.</p>
         <p>계정 삭제 시 Firebase UID의 유료 권한도 삭제하고 구매 해시 기록과 이전 UID의 연결을 해제합니다. 같은 Google ID로 일회성 구매를 복원하고 토큰 재사용을 방지하기 위해 백엔드는 구매 토큰과 Google 로그인 제공자의 비가역 해시 및 필요한 상품 상태를 보관하며 원본 구매 토큰은 보관하지 않습니다.</p>
 
-        <h2>6. 광고 및 집계 측정(Production 347)</h2>
-        <p>Production 347은 Google Mobile Ads로 저빈도 표준 전면 광고를 표시합니다. 무료 사용자는 중복되지 않는 카드 25장을 완료하고 다음 구간이 남아 있을 때만 광고를 보게 됩니다. SDK는 IP로 추정한 대략적인 위치, 앱 상호작용, 진단 정보, 기기 식별자를 광고, 분석, 부정 방지, 보안 및 법적 준수에 사용할 수 있습니다. 앱은 UMP로 필요한 동의를 관리하고 필요할 때 광고 개인정보 보호 옵션을 제공합니다. Firebase Analytics는 집계된 학습 흐름과 광고 결과만 기록하며 Firebase UID, 이름, 이메일, 카드 본문 또는 자유 입력은 전송하지 않습니다.</p>
+        <h2>6. 광고 및 집계 측정</h2>
+        <p>현재 정식 버전은 Google Mobile Ads로 저빈도 표준 전면 광고를 표시합니다. 무료 사용자는 중복되지 않는 카드 25장을 완료하고 다음 구간이 남아 있을 때만 광고를 보게 됩니다. SDK는 IP로 추정한 대략적인 위치, 앱 상호작용, 진단 정보, 기기 식별자를 광고, 분석, 부정 방지, 보안 및 법적 준수에 사용할 수 있습니다. 앱은 UMP로 필요한 동의를 관리하고 필요할 때 광고 개인정보 보호 옵션을 제공합니다. Firebase Analytics는 집계된 학습 흐름과 광고 결과만 기록하며 Firebase UID, 이름, 이메일, 카드 본문 또는 자유 입력은 전송하지 않습니다.</p>
 
-        <h2>7. 일회성 구매 내부 테스트 후보(349, Production 미적용)</h2>
+        <h2>7. 일회성 구매 및 멤버십 플랜 Analytics</h2>
         <p>상품 가격, 적용 세금, 결제 수단 및 환불은 Google Play가 처리하며 LexiTale은 전체 결제 카드 번호나 은행 정보를 받지 않습니다. 앱은 고정 상품 ID, 불투명한 구매 토큰 및 Firebase 인증만 전송합니다. Cloud Functions는 Google Play에서 구매를 검증하고 승인하며 계정 권한, 토큰의 단방향 해시, 환불 또는 취소 상태만 저장하고 원본 토큰은 저장하지 않습니다. 보류, 취소, 환불 또는 철회된 구매는 업그레이드 권한을 부여하지 않거나 중지하지만 무료 콘텐츠와 학습 진도는 유지됩니다. 환불 또는 철회 후 앱은 기존 고화질 이미지 캐시를 새로 다운로드하거나 선택하지 않지만 백그라운드에서 삭제하지 않습니다. 계정 삭제, 앱 데이터 삭제 또는 앱 제거로 로컬 캐시를 제거할 수 있습니다.</p>
         <p>Google Play 실시간 개발자 알림 중복 제거 영수증은 90일 동안만 보관하며 Firestore TTL로 만료 후 삭제합니다.</p>
-        <p>다음 post-349 후보부터 Firebase Analytics에 집계된 멤버십 플랜 상호작용과 구매 단계 결과를 기록합니다. 이벤트에는 얼리 액세스／정식 단계, 스토어 상태, 결과만 포함되며 Firebase UID, 이름, 이메일, 상품 가격, 구매 토큰 또는 자유 입력은 포함되지 않습니다.</p>
+        <p>현재 정식 버전은 Firebase Analytics에 집계된 멤버십 플랜 상호작용과 구매 단계 결과를 기록합니다. 이벤트에는 얼리 액세스／정식 단계, 스토어 상태, 결과만 포함되며 Firebase UID, 이름, 이메일, 상품 가격, 구매 토큰 또는 자유 입력은 포함되지 않습니다.</p>
 
         <h2>8. 문의하기</h2>
         <p>본 방침에 대한 문의사항이나 의견은 다음 메일로 보내주시기 바랍니다: <a href="mailto:lexitale.support@gmail.com">lexitale.support@gmail.com</a></p>
